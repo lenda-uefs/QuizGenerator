@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/3porquinhos.ogg-8127ff0f67731d3f6af89e425374b1ed.oggstr"
+
+[deps]
+
+source_file="res://sound/3porquinhos.ogg"
+dest_files=[ "res://.import/3porquinhos.ogg-8127ff0f67731d3f6af89e425374b1ed.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

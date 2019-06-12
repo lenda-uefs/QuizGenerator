@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/PequenaSereia_01.ogg-45afd8c8f98c19fc62d18ea88aeea64c.oggstr"
+
+[deps]
+
+source_file="res://sound/PequenaSereia_01.ogg"
+dest_files=[ "res://.import/PequenaSereia_01.ogg-45afd8c8f98c19fc62d18ea88aeea64c.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

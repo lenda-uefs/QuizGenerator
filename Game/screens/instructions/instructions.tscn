@@ -1,0 +1,443 @@
+[gd_scene load_steps=25 format=2]
+
+[ext_resource path="res://screens/instructions/instructions.gd" type="Script" id=1]
+[ext_resource path="res://sprites/images/blueBackground.png" type="Texture" id=2]
+[ext_resource path="res://sprites/texts/instructions.png" type="Texture" id=3]
+[ext_resource path="res://sprites/images/EscolherHist.png" type="Texture" id=4]
+[ext_resource path="res://KGSecondChancesSketch.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://sprites/images/goForward.png" type="Texture" id=6]
+[ext_resource path="res://sprites/images/goBack.png" type="Texture" id=7]
+[ext_resource path="res://sprites/images/seta2.png" type="Texture" id=8]
+[ext_resource path="res://sprites/images/3Porquinhos/Parte10.jpg" type="Texture" id=9]
+[ext_resource path="res://sprites/images/picZoom.png" type="Texture" id=10]
+[ext_resource path="res://sprites/images/picZoomPB.png" type="Texture" id=11]
+[ext_resource path="res://screens/animations/slide.tres" type="Animation" id=12]
+[ext_resource path="res://sprites/images/innerCircle.png" type="Texture" id=13]
+[ext_resource path="res://sprites/images/outerCircle.png" type="Texture" id=14]
+[ext_resource path="res://sprites/images/click.png" type="Texture" id=15]
+[ext_resource path="res://sprites/images/pin.png" type="Texture" id=16]
+[ext_resource path="res://sprites/texts/Voltar.png" type="Texture" id=17]
+[ext_resource path="res://sprites/texts/Iniciar jogo.png" type="Texture" id=18]
+[ext_resource path="res://sprites/images/soundOn.png" type="Texture" id=19]
+
+[sub_resource type="DynamicFont" id=1]
+size = 26
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 5 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "arrowBlinking"
+length = 3.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("arrow:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.6, 0.8, 1.1, 1.6, 1.8, 2.4, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 191.163, -152.114 ), Vector2( 191.163, -152.114 ), Vector2( 191.163, -108.114 ), Vector2( 191.163, -108.114 ), Vector2( 191.163, -108.114 ), Vector2( 191.163, -61.1136 ), Vector2( 191.163, -61.1136 ), Vector2( 191.163, -61.1136 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("arrow:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 0.7, 1, 1.5, 1.7, 2.3, 2.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "clickEmulator1"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("click:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 407.897, -81.6454 ), Vector2( 385.265, -112.012 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("click:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.342102, 0.342102 ), Vector2( 0.285711, 0.285711 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("outerClick:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1.1, 1.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("innerClick:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1.1, 1.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("outerClick:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 366.91, -132.642 ), Vector2( 366.91, -132.642 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("innerClick:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 366.91, -132.642 ), Vector2( 366.91, -132.642 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "clickEmulator2"
+length = 4.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("click:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 22.6334, -106.895 ), Vector2( -17.1029, -160.068 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("click:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.342102, 0.342102 ), Vector2( 0.285711, 0.285711 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("outerClick:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1.1, 1.3, 1.6, 4.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("innerClick:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1.1, 1.3, 1.6, 4.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("polaroid1:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 2.1, 4, 4.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 4.75757, -137.796 ), Vector2( 4.75757, -137.796 ), Vector2( 211.433, -153.479 ), Vector2( 211.433, -153.479 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("polaroid1:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 2.1, 4, 4.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.196955, 0.196956 ), Vector2( 0.196955, 0.196956 ), Vector2( 0.268365, 0.268365 ), Vector2( 0.268365, 0.268365 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("click:self_modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 1.7, 1.9, 4.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("pin:self_modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 1, 2, 4.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("tela1:texture")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 2.1, 2.2, 4.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 10 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 11 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("innerClick:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 4.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -35.5199, -180.285 ), Vector2( -35.5199, -180.285 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("outerClick:position")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 4.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -35.5199, -180.285 ), Vector2( -35.5199, -180.285 ) ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("polaroid1:texture")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0, 4.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 9 ), ExtResource( 9 ) ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("pin:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0, 4.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.961975, -275.232 ), Vector2( 0.961975, -275.232 ) ]
+}
+
+[sub_resource type="DynamicFont" id=5]
+size = 29
+font_data = ExtResource( 5 )
+
+[node name="Node2D" type="Node2D"]
+position = Vector2( 313.527, 500.437 )
+script = ExtResource( 1 )
+
+[node name="background" type="ColorRect" parent="."]
+self_modulate = Color( 1, 1, 1, 0.972549 )
+margin_left = -314.0
+margin_top = -501.0
+margin_right = 711.0
+margin_bottom = 100.0
+color = Color( 0.611765, 0.862745, 0.972549, 0.905882 )
+
+[node name="paintedBackground" type="Sprite" parent="."]
+position = Vector2( 197.345, -200.487 )
+scale = Vector2( 2.53887, 0.587336 )
+texture = ExtResource( 2 )
+
+[node name="title" type="Sprite" parent="."]
+position = Vector2( -191.695, -454.038 )
+scale = Vector2( 0.27052, 0.27052 )
+texture = ExtResource( 3 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -177.474
+margin_top = -356.947
+margin_right = 559.526
+margin_bottom = 53.0526
+
+[node name="tela1" type="Sprite" parent="."]
+position = Vector2( 192.162, -152.191 )
+scale = Vector2( 0.709, 0.709 )
+texture = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = -180.001
+margin_top = -432.634
+margin_right = 559.999
+margin_bottom = -398.634
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "- Ao escolher “Jogar\", você será levado a essa tela."
+
+[node name="next" type="TouchScreenButton" parent="."]
+position = Vector2( 584.655, -183.416 )
+scale = Vector2( 2.04115, 2.04115 )
+normal = ExtResource( 6 )
+
+[node name="previous" type="TouchScreenButton" parent="."]
+visible = false
+position = Vector2( -290.918, -183.416 )
+scale = Vector2( 2.041, 2.041 )
+normal = ExtResource( 7 )
+
+[node name="arrow" type="Sprite" parent="."]
+visible = false
+position = Vector2( 191.163, -152.114 )
+rotation = -1.5708
+scale = Vector2( 0.300498, 0.300498 )
+texture = ExtResource( 8 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/arrowBlinking = SubResource( 2 )
+anims/clickEmulator1 = SubResource( 3 )
+anims/clickEmulator2 = SubResource( 4 )
+anims/slideEmulator = ExtResource( 12 )
+
+[node name="polaroid1" type="Sprite" parent="."]
+visible = false
+position = Vector2( 366.017, -138.459 )
+scale = Vector2( 0.196955, 0.196956 )
+texture = ExtResource( 9 )
+
+[node name="outerClick" type="Sprite" parent="."]
+visible = false
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -35.5199, -180.285 )
+scale = Vector2( 0.225214, 0.225214 )
+texture = ExtResource( 13 )
+
+[node name="innerClick" type="Sprite" parent="."]
+visible = false
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -35.5199, -180.285 )
+scale = Vector2( 0.225214, 0.225214 )
+texture = ExtResource( 14 )
+
+[node name="click" type="Sprite" parent="."]
+visible = false
+position = Vector2( 380.378, -174.729 )
+scale = Vector2( 0.342102, 0.342102 )
+texture = ExtResource( 15 )
+
+[node name="pin" type="Sprite" parent="."]
+visible = false
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 364.878, -274.536 )
+scale = Vector2( 0.531748, 0.531748 )
+texture = ExtResource( 16 )
+
+[node name="back" type="TouchScreenButton" parent="."]
+position = Vector2( 577.024, 54.3992 )
+scale = Vector2( 0.283832, 0.283832 )
+normal = ExtResource( 17 )
+
+[node name="Popup" type="Popup" parent="."]
+editor/display_folded = true
+margin_left = -318.0
+margin_top = -505.0
+margin_right = 715.0
+margin_bottom = 103.0
+
+[node name="blackEffect" type="ColorRect" parent="Popup"]
+self_modulate = Color( 0, 0, 0, 0.901961 )
+margin_right = 1033.0
+margin_bottom = 608.0
+
+[node name="Label" type="Label" parent="Popup"]
+margin_left = 344.6
+margin_top = 271.469
+margin_right = 677.6
+margin_bottom = 309.469
+custom_fonts/font = SubResource( 5 )
+text = "Agora sim, vamos lá!"
+
+[node name="ColorRect" type="ColorRect" parent="Popup"]
+margin_left = 379.352
+margin_top = 330.216
+margin_right = 617.352
+margin_bottom = 370.216
+
+[node name="iniciarJogo" type="TouchScreenButton" parent="Popup"]
+position = Vector2( 400.002, 327.979 )
+scale = Vector2( 0.235213, 0.235213 )
+normal = ExtResource( 18 )
+
+[node name="musicButton" type="TouchScreenButton" parent="."]
+position = Vector2( 649.816, -493.741 )
+scale = Vector2( 0.309, 0.309 )
+normal = ExtResource( 19 )
+
+[connection signal="pressed" from="next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="previous" to="." method="_on_previous_pressed"]
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Popup/iniciarJogo" to="." method="_on_iniciarJogo_pressed"]
+[connection signal="pressed" from="musicButton" to="." method="_on_musicButton_pressed"]

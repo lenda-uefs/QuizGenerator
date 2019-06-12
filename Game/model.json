@@ -1,0 +1,25 @@
+{
+	"Game_title":"Put here your game title",
+	"Background_sound_path":"Put here the path to your game background sound",
+	"Stories":{
+		"Story_1":{
+			"Story_title":"Type here the title of the story that you will put into your game",
+			"Story_sound_path":"Put here the path to the audio that tells your story",
+			"Story_cover": "Path to the image that represents a cover to your story",
+			"Questions":{
+				"Question_1":{
+					"question_text": "Put here the questions of your Quiz.",
+					"option_1": "Path to the image of the first answer option",
+					"option_2": "Path to the image of the second answer option",
+					"answer": "Number of the option that answer you question: 1 or 2"
+				},
+				"Question_2":{
+					"question_text": "You can put more questions by coping the Question_x block",
+					"option_1": "Path to the image of the first answer option",
+					"option_2": "Path to the image of the second answer option",
+					"answer": "1"
+				}
+			}
+		}
+	}
+}

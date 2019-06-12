@@ -1,0 +1,179 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://screens/chooseStoryScene/storyChooseManager.gd" type="Script" id=1]
+[ext_resource path="res://sprites/images/blueBackground.png" type="Texture" id=2]
+[ext_resource path="res://sprites/texts/historySelection.png" type="Texture" id=3]
+[ext_resource path="res://sprites/images/flor.png" type="Texture" id=4]
+[ext_resource path="res://sprites/images/estante.png" type="Texture" id=5]
+[ext_resource path="res://sprites/images/kidReading.png" type="Texture" id=6]
+[ext_resource path="res://sprites/images/whiteBackground.png" type="Texture" id=7]
+[ext_resource path="res://KGSecondChancesSketch.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://sprites/images/lamp.png" type="Texture" id=9]
+[ext_resource path="res://transition2.tres" type="Animation" id=10]
+[ext_resource path="res://sprites/texts/Voltar.png" type="Texture" id=11]
+[ext_resource path="res://sprites/images/soundOn.png" type="Texture" id=12]
+
+[sub_resource type="DynamicFont" id=1]
+size = 29
+font_data = ExtResource( 8 )
+
+[node name="Node2D" type="Node2D"]
+position = Vector2( 313.527, 500.437 )
+script = ExtResource( 1 )
+
+[node name="background" type="ColorRect" parent="."]
+self_modulate = Color( 1, 1, 1, 0.972549 )
+margin_left = -315.0
+margin_top = -501.0
+margin_right = 711.0
+margin_bottom = 100.0
+color = Color( 0.611765, 0.862745, 0.972549, 0.905882 )
+
+[node name="paintedBackground" type="Sprite" parent="."]
+position = Vector2( 192.568, -197.822 )
+scale = Vector2( 2.55004, 0.584579 )
+texture = ExtResource( 2 )
+
+[node name="question" type="Sprite" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 80.3813, -449.742 )
+scale = Vector2( 0.27052, 0.27052 )
+texture = ExtResource( 3 )
+
+[node name="floor" type="Sprite" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -152.85, 71.183 )
+scale = Vector2( 0.107333, 0.267803 )
+texture = ExtResource( 4 )
+
+[node name="floor2" type="Sprite" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 197.701, 71.183 )
+scale = Vector2( 0.107333, 0.267803 )
+texture = ExtResource( 4 )
+
+[node name="floor3" type="Sprite" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 536.853, 71.183 )
+scale = Vector2( 0.107333, 0.267803 )
+texture = ExtResource( 4 )
+
+[node name="estante" type="Sprite" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -171.698, -137.272 )
+scale = Vector2( 0.739938, 0.739938 )
+texture = ExtResource( 5 )
+
+[node name="kidReading" type="Sprite" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 67.0292, -5.04102 )
+scale = Vector2( 0.290657, 0.289857 )
+texture = ExtResource( 6 )
+
+[node name="option1" type="ColorRect" parent="."]
+editor/display_folded = true
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = 248.014
+margin_top = -278.384
+margin_right = 700.013
+margin_bottom = -216.384
+
+[node name="history1Button" type="TouchScreenButton" parent="option1"]
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -18.3351, -6.30409 )
+scale = Vector2( 0.441803, 0.15555 )
+normal = ExtResource( 7 )
+
+[node name="history1" type="Label" parent="option1"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = -3.0
+margin_top = 1.0
+margin_right = 453.0
+margin_bottom = 64.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Title of the first story"
+align = 1
+valign = 1
+autowrap = true
+clip_text = true
+
+[node name="option2" type="ColorRect" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = 246.906
+margin_top = -201.226
+margin_right = 698.904
+margin_bottom = -135.226
+
+[node name="history2Button" type="TouchScreenButton" parent="option2"]
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -18.9799, -6.37963 )
+scale = Vector2( 0.441645, 0.164842 )
+normal = ExtResource( 7 )
+
+[node name="history2" type="Label" parent="option2"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = -3.0
+margin_top = -2.0
+margin_right = 453.0
+margin_bottom = 68.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Title of the second story"
+align = 1
+valign = 1
+autowrap = true
+clip_text = true
+
+[node name="option3" type="ColorRect" parent="."]
+editor/display_folded = true
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = 249.122
+margin_top = -121.448
+margin_right = 701.121
+margin_bottom = -55.4478
+
+[node name="history3Button" type="TouchScreenButton" parent="option3"]
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -18.9799, -6.37963 )
+scale = Vector2( 0.441645, 0.164842 )
+normal = ExtResource( 7 )
+
+[node name="history3" type="Label" parent="option3"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = -3.0
+margin_right = 453.0
+margin_bottom = 68.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Title of the third story"
+align = 1
+valign = 1
+autowrap = true
+clip_text = true
+
+[node name="light" type="Sprite" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 624.247, -482.916 )
+texture = ExtResource( 9 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/transition = ExtResource( 10 )
+
+[node name="voltar" type="TouchScreenButton" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 428.034, -24.0825 )
+scale = Vector2( 0.229481, 0.229481 )
+normal = ExtResource( 11 )
+
+[node name="musicButton" type="TouchScreenButton" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 650.283, -493.212 )
+scale = Vector2( 0.309, 0.309 )
+normal = ExtResource( 12 )
+
+[connection signal="pressed" from="option1/history1Button" to="." method="_on_history1Button_pressed"]
+[connection signal="pressed" from="option2/history2Button" to="." method="_on_history2Button_pressed"]
+[connection signal="pressed" from="option3/history3Button" to="." method="_on_history3Button_pressed"]
+[connection signal="pressed" from="voltar" to="." method="_on_voltar_pressed"]
+[connection signal="pressed" from="musicButton" to="." method="_on_musicButton_pressed"]

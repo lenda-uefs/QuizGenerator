@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/ChapeuzinhoVermelho_01.ogg-f731986ddf54517d73c26c54b63bb9de.oggstr"
+
+[deps]
+
+source_file="res://sound/ChapeuzinhoVermelho_01.ogg"
+dest_files=[ "res://.import/ChapeuzinhoVermelho_01.ogg-f731986ddf54517d73c26c54b63bb9de.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
