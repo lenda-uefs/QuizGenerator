@@ -1,29 +1,28 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://screens/instructions/instructions.gd" type="Script" id=1]
-[ext_resource path="res://sprites/images/blueBackground.png" type="Texture" id=2]
-[ext_resource path="res://sprites/texts/instructions.png" type="Texture" id=3]
-[ext_resource path="res://sprites/images/EscolherHist.png" type="Texture" id=4]
-[ext_resource path="res://KGSecondChancesSketch.ttf" type="DynamicFontData" id=5]
-[ext_resource path="res://sprites/images/goForward.png" type="Texture" id=6]
-[ext_resource path="res://sprites/images/goBack.png" type="Texture" id=7]
-[ext_resource path="res://sprites/images/seta2.png" type="Texture" id=8]
-[ext_resource path="res://sprites/images/3Porquinhos/Parte10.jpg" type="Texture" id=9]
-[ext_resource path="res://sprites/images/picZoom.png" type="Texture" id=10]
-[ext_resource path="res://sprites/images/picZoomPB.png" type="Texture" id=11]
-[ext_resource path="res://screens/animations/slide.tres" type="Animation" id=12]
-[ext_resource path="res://sprites/images/innerCircle.png" type="Texture" id=13]
-[ext_resource path="res://sprites/images/outerCircle.png" type="Texture" id=14]
-[ext_resource path="res://sprites/images/click.png" type="Texture" id=15]
-[ext_resource path="res://sprites/images/pin.png" type="Texture" id=16]
-[ext_resource path="res://sprites/texts/Voltar.png" type="Texture" id=17]
-[ext_resource path="res://sprites/texts/Iniciar jogo.png" type="Texture" id=18]
-[ext_resource path="res://sprites/images/soundOn.png" type="Texture" id=19]
+[ext_resource path="res://sprites/texts/instructions.png" type="Texture" id=2]
+[ext_resource path="res://sprites/images/EscolherHist.png" type="Texture" id=3]
+[ext_resource path="res://KGSecondChancesSketch.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://sprites/images/goForward.png" type="Texture" id=5]
+[ext_resource path="res://sprites/images/goBack.png" type="Texture" id=6]
+[ext_resource path="res://sprites/images/seta2.png" type="Texture" id=7]
+[ext_resource path="res://sprites/images/3Porquinhos/Parte10.jpg" type="Texture" id=8]
+[ext_resource path="res://sprites/images/picZoom.png" type="Texture" id=9]
+[ext_resource path="res://sprites/images/picZoomPB.png" type="Texture" id=10]
+[ext_resource path="res://screens/animations/slide.tres" type="Animation" id=11]
+[ext_resource path="res://sprites/images/innerCircle.png" type="Texture" id=12]
+[ext_resource path="res://sprites/images/outerCircle.png" type="Texture" id=13]
+[ext_resource path="res://sprites/images/click.png" type="Texture" id=14]
+[ext_resource path="res://sprites/images/pin.png" type="Texture" id=15]
+[ext_resource path="res://sprites/texts/Voltar.png" type="Texture" id=16]
+[ext_resource path="res://sprites/texts/Iniciar jogo.png" type="Texture" id=17]
+[ext_resource path="res://sprites/images/soundOn.png" type="Texture" id=18]
 
 [sub_resource type="DynamicFont" id=1]
 size = 26
 outline_color = Color( 0, 0, 0, 1 )
-font_data = ExtResource( 5 )
+font_data = ExtResource( 4 )
 
 [sub_resource type="Animation" id=2]
 resource_name = "arrowBlinking"
@@ -241,7 +240,7 @@ tracks/8/keys = {
 "times": PoolRealArray( 0, 2.1, 2.2, 4.6 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 10 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 11 ) ]
+"values": [ ExtResource( 9 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 10 ) ]
 }
 tracks/9/type = "value"
 tracks/9/path = NodePath("innerClick:position")
@@ -277,7 +276,7 @@ tracks/11/keys = {
 "times": PoolRealArray( 0, 4.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ ExtResource( 9 ), ExtResource( 9 ) ]
+"values": [ ExtResource( 8 ), ExtResource( 8 ) ]
 }
 tracks/12/type = "value"
 tracks/12/path = NodePath("pin:position")
@@ -294,7 +293,7 @@ tracks/12/keys = {
 
 [sub_resource type="DynamicFont" id=5]
 size = 29
-font_data = ExtResource( 5 )
+font_data = ExtResource( 4 )
 
 [node name="Node2D" type="Node2D"]
 position = Vector2( 313.527, 500.437 )
@@ -308,15 +307,10 @@ margin_right = 711.0
 margin_bottom = 100.0
 color = Color( 0.611765, 0.862745, 0.972549, 0.905882 )
 
-[node name="paintedBackground" type="Sprite" parent="."]
-position = Vector2( 197.345, -200.487 )
-scale = Vector2( 2.53887, 0.587336 )
-texture = ExtResource( 2 )
-
 [node name="title" type="Sprite" parent="."]
 position = Vector2( -191.695, -454.038 )
 scale = Vector2( 0.27052, 0.27052 )
-texture = ExtResource( 3 )
+texture = ExtResource( 2 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
 margin_left = -177.474
@@ -327,7 +321,7 @@ margin_bottom = 53.0526
 [node name="tela1" type="Sprite" parent="."]
 position = Vector2( 192.162, -152.191 )
 scale = Vector2( 0.709, 0.709 )
-texture = ExtResource( 4 )
+texture = ExtResource( 3 )
 
 [node name="Label" type="Label" parent="."]
 margin_left = -180.001
@@ -341,64 +335,64 @@ text = "- Ao escolher “Jogar\", você será levado a essa tela."
 [node name="next" type="TouchScreenButton" parent="."]
 position = Vector2( 584.655, -183.416 )
 scale = Vector2( 2.04115, 2.04115 )
-normal = ExtResource( 6 )
+normal = ExtResource( 5 )
 
 [node name="previous" type="TouchScreenButton" parent="."]
 visible = false
 position = Vector2( -290.918, -183.416 )
 scale = Vector2( 2.041, 2.041 )
-normal = ExtResource( 7 )
+normal = ExtResource( 6 )
 
 [node name="arrow" type="Sprite" parent="."]
 visible = false
 position = Vector2( 191.163, -152.114 )
 rotation = -1.5708
 scale = Vector2( 0.300498, 0.300498 )
-texture = ExtResource( 8 )
+texture = ExtResource( 7 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/arrowBlinking = SubResource( 2 )
 anims/clickEmulator1 = SubResource( 3 )
 anims/clickEmulator2 = SubResource( 4 )
-anims/slideEmulator = ExtResource( 12 )
+anims/slideEmulator = ExtResource( 11 )
 
 [node name="polaroid1" type="Sprite" parent="."]
 visible = false
 position = Vector2( 366.017, -138.459 )
 scale = Vector2( 0.196955, 0.196956 )
-texture = ExtResource( 9 )
+texture = ExtResource( 8 )
 
 [node name="outerClick" type="Sprite" parent="."]
 visible = false
 self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( -35.5199, -180.285 )
 scale = Vector2( 0.225214, 0.225214 )
-texture = ExtResource( 13 )
+texture = ExtResource( 12 )
 
 [node name="innerClick" type="Sprite" parent="."]
 visible = false
 self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( -35.5199, -180.285 )
 scale = Vector2( 0.225214, 0.225214 )
-texture = ExtResource( 14 )
+texture = ExtResource( 13 )
 
 [node name="click" type="Sprite" parent="."]
 visible = false
 position = Vector2( 380.378, -174.729 )
 scale = Vector2( 0.342102, 0.342102 )
-texture = ExtResource( 15 )
+texture = ExtResource( 14 )
 
 [node name="pin" type="Sprite" parent="."]
 visible = false
 self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 364.878, -274.536 )
 scale = Vector2( 0.531748, 0.531748 )
-texture = ExtResource( 16 )
+texture = ExtResource( 15 )
 
 [node name="back" type="TouchScreenButton" parent="."]
 position = Vector2( 577.024, 54.3992 )
 scale = Vector2( 0.283832, 0.283832 )
-normal = ExtResource( 17 )
+normal = ExtResource( 16 )
 
 [node name="Popup" type="Popup" parent="."]
 editor/display_folded = true
@@ -429,12 +423,12 @@ margin_bottom = 370.216
 [node name="iniciarJogo" type="TouchScreenButton" parent="Popup"]
 position = Vector2( 400.002, 327.979 )
 scale = Vector2( 0.235213, 0.235213 )
-normal = ExtResource( 18 )
+normal = ExtResource( 17 )
 
 [node name="musicButton" type="TouchScreenButton" parent="."]
 position = Vector2( 649.816, -493.741 )
 scale = Vector2( 0.309, 0.309 )
-normal = ExtResource( 19 )
+normal = ExtResource( 18 )
 
 [connection signal="pressed" from="next" to="." method="_on_next_pressed"]
 [connection signal="pressed" from="previous" to="." method="_on_previous_pressed"]

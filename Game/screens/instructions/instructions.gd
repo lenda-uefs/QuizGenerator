@@ -40,7 +40,7 @@ var musicOff = preload("res://sprites/images/soundOff.png")
 var musicOn = preload("res://sprites/images/soundOn.png")
 
 func _ready():
-	pass # Replace with function body.
+	$background.set_frame_color(Color(global_config.game_color["r"], global_config.game_color["g"], global_config.game_color["b"]))
 
 
 func _on_next_pressed():

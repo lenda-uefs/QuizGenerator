@@ -9,19 +9,20 @@ var button1_2 = 0
 var button2_1 = 0
 var button2_2 = 0
 
-#var scenesTimes = [
-#[0, 8.944, 20.581312, 24.906647, 29.087978, 36.27198, 46.863979, 50.954647, 55.301311, 64.826645, 75.813309, 81.461311, 89.034645, 94.287979],
-#[0, 13.68, 21.6, 29.754667, 39.509335, 52.010666, 58.080002, 67.418663, 74.410667, 78.346649, 81.786644, 86.362648, 90.826645, 96.245316, 104.559982],
-#[0, 6.133333, 10.362667, 23.440001, 30.154667, 40.469334, 43.674667, 50.762665, 56.015999, 66.842667, 76.767998, 89.984001]]
-
 
 func _ready():
+	$BlueBackground.set_frame_color(Color(global_config.game_color["r"], global_config.game_color["g"], global_config.game_color["b"]))
 #warning-ignore:return_value_discarded
 	$optionsAnimation/close.set_block_signals(true)
 	get_tree().set_auto_accept_quit(false)
 	get_tree().set_quit_on_go_back(false)
-	$Popup/title.set_text(global_config.stories["Story_" + str(global_config.storychosen)]["Story_title"])
-	global_config.best_fit_check(20, $Popup/title)
+	if(global_config.mode == 1):
+		$Popup1/title.set_text(global_config.stories["Story_" + str(global_config.storychosen)]["Story_title"])
+		global_config.best_fit_check(35, $Popup1/title)
+	else:
+		$Popup2/title.set_text(global_config.stories["Story_" + str(global_config.storychosen)]["Story_title"])
+		global_config.best_fit_check(35, $Popup2/title)
+		$Popup2/text.set_text(global_config.stories["Story_" + str(global_config.storychosen)]["Story_text_description"])
 	_set_options()
 	if(global_config.played_once == 0):
 		$ColorRect2.set_visible(true)
@@ -79,7 +80,7 @@ func next():
 
 func _set_options():
 	$question.set_text(global_config.stories["Story_" + str(global_config.storychosen)]["Questions"]["Question_" + str(global_config.level+1)]["question_text"])
-	global_config.best_fit_check(24, $question)
+	global_config.best_fit_check(40, $question)
 	$polaroid3/polaroid1.set_texture(global_config.stories["Story_" + str(global_config.storychosen)]["Questions"]["Question_" + str(global_config.level+1)]["option_1"])
 	$polaroid3_2/polaroid1.set_texture(global_config.stories["Story_" + str(global_config.storychosen)]["Questions"]["Question_" + str(global_config.level+1)]["option_2"])
 	correctAnswer = int(global_config.stories["Story_" + str(global_config.storychosen)]["Questions"]["Question_" + str(global_config.level+1)]["answer"])
@@ -102,14 +103,14 @@ func _zoomScreenAnimation(var type):
 	if(type == 0):
 		$optionsAnimation/TouchScreenButton.set_texture($polaroid3/polaroid1.get_texture())
 		$optionsAnimation.set_visible(true)
-		$polaroid3/polaroid1.set_shape_visible(false)
+		#$polaroid3/polaroid1.set_visible(false)
 		get_node("/root/Node2D/optionsAnimation/AnimationPlayer").play("zoom_in_Option1", -1, 1.0, false)
 		yield(get_node("/root/Node2D/optionsAnimation/AnimationPlayer"), "animation_finished")
 		global_config.zoomPic = 0
 	else:
 		$optionsAnimation/TouchScreenButton.set_texture($polaroid3_2/polaroid1.get_texture())
 		$optionsAnimation.set_visible(true)
-		$polaroid3_2/polaroid1.set_shape_visible(false)
+		#$polaroid3_2/polaroid1.set_visible(false)
 		get_node("/root/Node2D/optionsAnimation/AnimationPlayer").play("zoom_in_Option2", -1, 1.0, false)
 		yield(get_node("/root/Node2D/optionsAnimation/AnimationPlayer"), "animation_finished")
 		global_config.zoomPic = 1
@@ -142,7 +143,7 @@ func _verifyButtonsOption0():
 	if(button1_1 == 1 and button1_2 == 1):
 		$optionsAnimation/TouchScreenButton.set_texture($polaroid3/polaroid1.get_texture())
 		$optionsAnimation.set_visible(true)
-		$polaroid3/polaroid1.set_shape_visible(false)
+		#$polaroid3/polaroid1.set_visible(false)
 		get_node("/root/Node2D/optionsAnimation/AnimationPlayer").play("answer_Option1", -1, 1.0, false)
 		yield(get_node("/root/Node2D/optionsAnimation/AnimationPlayer"), "animation_finished")
 		givenAnswer = 1
@@ -161,7 +162,7 @@ func _verifyButtonsOption1():
 	if(button2_1 == 1 and button2_2 == 1):
 		$optionsAnimation/TouchScreenButton.set_texture($polaroid3_2/polaroid1.get_texture())
 		$optionsAnimation.set_visible(true)
-		$polaroid3_2/polaroid1.set_shape_visible(false)
+		#$polaroid3_2/polaroid1.set_visible(false)
 		get_node("/root/Node2D/optionsAnimation/AnimationPlayer").play("answer_Option2", -1, 1.0, false)
 		yield(get_node("/root/Node2D/optionsAnimation/AnimationPlayer"), "animation_finished")
 		givenAnswer = 2
@@ -177,16 +178,12 @@ func _verifyButtonsOption1():
 
 func _on_pause_pressed():
 	$pauseScreen/close.set_block_signals(false)
-	$ColorRect.set_visible(false)
 	$pauseScreen.set_visible(true)
-	$ColorRect/ouvirTrecho.set_block_signals(true)
 	$polaroid3/half1_1.set_block_signals(true)
 	$polaroid3/half1_2.set_block_signals(true)
 	$polaroid3_2/half2_1.set_block_signals(true)
 	$polaroid3_2/half2_2.set_block_signals(true)
 	$pause.set_block_signals(true)
-	if($history.is_playing()):
-		$history.stop()
 	if(global_config.played_once == 0):
 		$innerClick.set_visible(false)
 		$outerClick.set_visible(false)
@@ -194,3 +191,11 @@ func _on_pause_pressed():
 		$ColorRect2.set_visible(false)
 	$pauseScreen/AnimationPlayer.play_backwards("Pausemenu", -1)
 	yield(get_node("/root/Node2D/pauseScreen/AnimationPlayer"), "animation_finished")
+
+func _on_keepPlaying_pressed():
+	$Popup2.set_visible(false)
+	$polaroid3/half1_1.set_block_signals(false)
+	$polaroid3/half1_2.set_block_signals(false)
+	$polaroid3_2/half2_1.set_block_signals(false)
+	$polaroid3_2/half2_2.set_block_signals(false)
+	$pause.set_block_signals(false)

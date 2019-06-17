@@ -1,10 +1,18 @@
 {
 	"Game_title":"Put here your game title",
 	"Background_sound_path":"Put here the path to your game background sound",
+	"Title_screen_background": "Put here the path to the side background image",
+	"Game_color_pattern":{
+		"r":"Put here the rgba numbers to the background color of the application",
+		"g":"If you left it in blank, a default color will be assigned",
+		"b":"",
+		"a":""
+	},
 	"Stories":{
 		"Story_1":{
 			"Story_title":"Type here the title of the story that you will put into your game",
 			"Story_sound_path":"Put here the path to the audio that tells your story",
+			"Story_text_description":"Your story in words",
 			"Story_cover": "Path to the image that represents a cover to your story",
 			"Questions":{
 				"Question_1":{

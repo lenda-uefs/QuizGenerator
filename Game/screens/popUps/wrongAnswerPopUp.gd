@@ -7,24 +7,26 @@ extends Node2D
 #]
 
 var buttons = [preload("res://sprites/images/goBack.png"), preload("res://sprites/images/play.png"),
-preload("res://sprites/images/goForward.png"), preload("res://sprites/texts/continuarJogando.png")]
+preload("res://sprites/images/goForward.png")]
 
 func _on_ouvirAgain_pressed():
 	get_node("/root/Node2D/wrongAnswer/AnimationPlayer").play_backwards("openUp", -1)
 	yield(get_node("/root/Node2D/wrongAnswer/AnimationPlayer"), "animation_finished")
 	get_node("/root/Node2D/wrongAnswer").set_visible(false)
-	get_node("/root/Node2D/Popup").popup()
-	get_node("/root/Node2D/Popup/history/goBack").set_texture(buttons[0])
-	get_node("/root/Node2D/Popup/history/play").set_texture(buttons[1])
-	get_node("/root/Node2D/Popup/history/goForward").set_texture(buttons[2])
-	get_node("/root/Node2D/Popup/history/keepPlaying").set_texture(buttons[3])
-	get_node("/root/Node2D/Popup/history/timePassing").set_visible(true)
-	get_node("/root/Node2D/Popup/history/playerExibition").set_visible(true)
-	get_node("/root/Node2D/Popup/history/goBack").set_block_signals(false)
-	get_node("/root/Node2D/Popup/history/play").set_block_signals(false)
-	get_node("/root/Node2D/Popup/history/goForward").set_block_signals(false)
-	get_node("/root/Node2D/Popup/history/keepPlaying").set_block_signals(false)
-	get_node("/root/Node2D/Popup/history").setAudioTime(0)
+	if(global_config.mode == 1):
+		get_node("/root/Node2D/Popup1").popup()
+		get_node("/root/Node2D/Popup1/history/goBack").set_texture(buttons[0])
+		get_node("/root/Node2D/Popup1/history/play").set_texture(buttons[1])
+		get_node("/root/Node2D/Popup1/history/goForward").set_texture(buttons[2])
+		get_node("/root/Node2D/Popup1/history/timePassing").set_visible(true)
+		get_node("/root/Node2D/Popup1/history/playerExibition").set_visible(true)
+		get_node("/root/Node2D/Popup1/history/goBack").set_block_signals(false)
+		get_node("/root/Node2D/Popup1/history/play").set_block_signals(false)
+		get_node("/root/Node2D/Popup1/history/goForward").set_block_signals(false)
+		get_node("/root/Node2D/Popup1/history/keepPlaying").set_block_signals(false)
+		get_node("/root/Node2D/Popup1/history").setAudioTime(0)
+	else:
+		get_node("/root/Node2D/Popup2").popup()
 	#get_node("/root/Node2D/Popup/history").setAudioTime(scenesTimes[global_config.storychosen-1][global_config.level])
 
 

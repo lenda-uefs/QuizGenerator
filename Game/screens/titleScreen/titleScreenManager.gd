@@ -7,9 +7,12 @@ var musicOn = preload("res://sprites/images/soundOn.png")
 
 
 func _ready():
+	if(!global_config.title_screen_background == null):
+		$backgroundImage.set_texture(global_config.title_screen_background)
+	$background.set_frame_color(Color(global_config.game_color["r"], global_config.game_color["g"], global_config.game_color["b"]))
 	$gameTitle.set_text(global_config.game_title)
-	global_config.best_fit_check(48, $gameTitle)
-	$goBack/voltar.set_block_signals(true)
+	global_config.best_fit_check(120, $gameTitle)
+	$goBack.set_block_signals(true)
 	get_tree().set_quit_on_go_back(true)
 	get_tree().set_auto_accept_quit(true)
 	if(global_config.music == true):
@@ -22,8 +25,8 @@ func _ready():
 
 func _on_play_pressed():
 	$option1/play.set_shape_visible(false)
-	$instructions.set_shape_visible(false)
-	$option3/creditos.set_shape_visible(false)
+	$option2/instructions.set_shape_visible(false)
+	$option3/credits.set_shape_visible(false)
 	get_node("/root/Node2D/AnimationPlayer").play("transition", -1, 1.0, false)
 	yield(get_node("/root/Node2D/AnimationPlayer"), "animation_finished")
 #warning-ignore:return_value_discarded
@@ -43,10 +46,10 @@ func _on_creditos_pressed():
 	$goBack.set_visible(true)
 	get_node("/root/Node2D/AnimationPlayer").play("creditScreen", -1, 1.0, false)
 	yield(get_node("/root/Node2D/AnimationPlayer"), "animation_finished")
-	$goBack/voltar.set_block_signals(false)
+	$goBack.set_block_signals(false)
 	$option1/play.set_block_signals(true)
-	$instructions.set_block_signals(true)
-	$option3/creditos.set_block_signals(true)
+	$option2/instructions.set_block_signals(true)
+	$option3/credits.set_block_signals(true)
 
 
 func _on_voltar_pressed():
@@ -56,9 +59,9 @@ func _on_voltar_pressed():
 	$logo2.set_visible(false)
 	$goBack.set_visible(false)
 	$option1/play.set_block_signals(false)
-	$instructions.set_block_signals(false)
-	$option3/creditos.set_block_signals(false)
-	$goBack/voltar.set_block_signals(true)
+	$option2/instructions.set_block_signals(false)
+	$option3/credits.set_block_signals(false)
+	$goBack.set_block_signals(true)
 
 
 func _on_musicButton_pressed():

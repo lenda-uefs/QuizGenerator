@@ -11,12 +11,19 @@ var background_sound = AudioStreamPlayer.new()
 var comeFrom_listenHistory
 var music = true
 
+#warning-ignore:unused_class_variable
+var mode #Caso seja 1, o jogo teve áudio. Caso seja 2, o jogo não teve
+
 signal musicChanged
 
 ##########################     Configuráveis    #############################
 var stories
 #warning-ignore:unused_class_variable
 var game_title
+#warning-ignore:unused_class_variable
+var game_color
+#warning-ignore:unused_class_variable
+var title_screen_background
 
 
 func _ready():

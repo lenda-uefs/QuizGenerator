@@ -1,6 +1,9 @@
 extends Node
 
-signal configurationDone
+#warning-ignore:unassigned_variable
+var tex
+#warning-ignore:unassigned_variable
+var img
 
 func _ready():
 	$FileDialog.set_filters(PoolStringArray(["*.json"]))
@@ -47,15 +50,20 @@ func _set_game_configuration(dic):
 	stream.data = snd_file.get_buffer(snd_file.get_len())
 	snd_file.close()
 	global_config.background_sound.stream = stream
-	emit_signal("configurationDone")
+	global_config.game_color = dic["Game_color_pattern"]
+	if(global_config.game_color["r"].empty()):
+		global_config.game_color["r"] = 0.66
+		global_config.game_color["g"] = 0.88
+		global_config.game_color["b"] = 0.96
+		global_config.game_color["a"] = 1
+	if(!dic["Title_screen_background"].empty()):
+		global_config.title_screen_background = _load_process(tex, img, dic["Title_screen_background"])
+	else:
+		global_config.title_screen_background = null
 	_importImages()
 
 
 func _importImages():
-	#warning-ignore:unassigned_variable
-	var tex
-	#warning-ignore:unassigned_variable
-	var img
 	for h in range(1, global_config.stories.size()+1):
 		for k in range (1, global_config.stories["Story_" + str(h)]["Questions"].size()+1):
 			for j in range (1, 3):

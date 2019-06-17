@@ -1,21 +1,116 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://screens/chooseStoryScene/storyChooseManager.gd" type="Script" id=1]
-[ext_resource path="res://sprites/images/blueBackground.png" type="Texture" id=2]
-[ext_resource path="res://sprites/texts/historySelection.png" type="Texture" id=3]
-[ext_resource path="res://sprites/images/flor.png" type="Texture" id=4]
-[ext_resource path="res://sprites/images/estante.png" type="Texture" id=5]
-[ext_resource path="res://sprites/images/kidReading.png" type="Texture" id=6]
-[ext_resource path="res://sprites/images/whiteBackground.png" type="Texture" id=7]
-[ext_resource path="res://KGSecondChancesSketch.ttf" type="DynamicFontData" id=8]
-[ext_resource path="res://sprites/images/lamp.png" type="Texture" id=9]
-[ext_resource path="res://transition2.tres" type="Animation" id=10]
-[ext_resource path="res://sprites/texts/Voltar.png" type="Texture" id=11]
-[ext_resource path="res://sprites/images/soundOn.png" type="Texture" id=12]
+[ext_resource path="res://sprites/images/new/chooseStory.png" type="Texture" id=2]
+[ext_resource path="res://sprites/images/whiteBackground.png" type="Texture" id=3]
+[ext_resource path="res://212 Queenie Sans.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://transition2.tres" type="Animation" id=5]
+[ext_resource path="res://sprites/images/soundOn.png" type="Texture" id=6]
 
 [sub_resource type="DynamicFont" id=1]
-size = 29
-font_data = ExtResource( 8 )
+size = 50
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 4 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "question2"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ "Com qual história você deseja jogar?", "Deseja ler ou ouvir a história?" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Label:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.6, 1.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("option1:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.7, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 248.014, -278.384 ), Vector2( 716.014, -278.384 ), Vector2( 248.014, -278.384 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("option2:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 246.906, -201.226 ), Vector2( 719.906, -201.226 ), Vector2( 246.906, -201.226 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("option3:rect_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 249.122, -121.448 ), Vector2( 717.122, -121.448 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("option1/history1:text")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Ouvir" ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("option2/history2:text")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "Ler" ]
+}
+
+[sub_resource type="DynamicFont" id=3]
+size = 60
+outline_size = 1
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 65
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 4 )
 
 [node name="Node2D" type="Node2D"]
 position = Vector2( 313.527, 500.437 )
@@ -27,51 +122,15 @@ margin_left = -315.0
 margin_top = -501.0
 margin_right = 711.0
 margin_bottom = 100.0
-color = Color( 0.611765, 0.862745, 0.972549, 0.905882 )
+color = Color( 0.662745, 0.882353, 0.964706, 1 )
 
-[node name="paintedBackground" type="Sprite" parent="."]
-position = Vector2( 192.568, -197.822 )
-scale = Vector2( 2.55004, 0.584579 )
+[node name="image" type="Sprite" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -59.4671, -142.543 )
+scale = Vector2( 1.28319, 1.28319 )
 texture = ExtResource( 2 )
 
-[node name="question" type="Sprite" parent="."]
-self_modulate = Color( 1, 1, 1, 0 )
-position = Vector2( 80.3813, -449.742 )
-scale = Vector2( 0.27052, 0.27052 )
-texture = ExtResource( 3 )
-
-[node name="floor" type="Sprite" parent="."]
-self_modulate = Color( 1, 1, 1, 0 )
-position = Vector2( -152.85, 71.183 )
-scale = Vector2( 0.107333, 0.267803 )
-texture = ExtResource( 4 )
-
-[node name="floor2" type="Sprite" parent="."]
-self_modulate = Color( 1, 1, 1, 0 )
-position = Vector2( 197.701, 71.183 )
-scale = Vector2( 0.107333, 0.267803 )
-texture = ExtResource( 4 )
-
-[node name="floor3" type="Sprite" parent="."]
-self_modulate = Color( 1, 1, 1, 0 )
-position = Vector2( 536.853, 71.183 )
-scale = Vector2( 0.107333, 0.267803 )
-texture = ExtResource( 4 )
-
-[node name="estante" type="Sprite" parent="."]
-self_modulate = Color( 1, 1, 1, 0 )
-position = Vector2( -171.698, -137.272 )
-scale = Vector2( 0.739938, 0.739938 )
-texture = ExtResource( 5 )
-
-[node name="kidReading" type="Sprite" parent="."]
-self_modulate = Color( 1, 1, 1, 0 )
-position = Vector2( 67.0292, -5.04102 )
-scale = Vector2( 0.290657, 0.289857 )
-texture = ExtResource( 6 )
-
 [node name="option1" type="ColorRect" parent="."]
-editor/display_folded = true
 self_modulate = Color( 1, 1, 1, 0 )
 margin_left = 248.014
 margin_top = -278.384
@@ -82,7 +141,7 @@ margin_bottom = -216.384
 self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( -18.3351, -6.30409 )
 scale = Vector2( 0.441803, 0.15555 )
-normal = ExtResource( 7 )
+normal = ExtResource( 3 )
 
 [node name="history1" type="Label" parent="option1"]
 self_modulate = Color( 1, 1, 1, 0 )
@@ -92,7 +151,8 @@ margin_right = 453.0
 margin_bottom = 64.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Title of the first story"
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+text = "Ouvir"
 align = 1
 valign = 1
 autowrap = true
@@ -102,14 +162,14 @@ clip_text = true
 self_modulate = Color( 1, 1, 1, 0 )
 margin_left = 246.906
 margin_top = -201.226
-margin_right = 698.904
+margin_right = 698.905
 margin_bottom = -135.226
 
 [node name="history2Button" type="TouchScreenButton" parent="option2"]
 self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( -18.9799, -6.37963 )
 scale = Vector2( 0.441645, 0.164842 )
-normal = ExtResource( 7 )
+normal = ExtResource( 3 )
 
 [node name="history2" type="Label" parent="option2"]
 self_modulate = Color( 1, 1, 1, 0 )
@@ -119,25 +179,24 @@ margin_right = 453.0
 margin_bottom = 68.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Title of the second story"
+text = "Ler"
 align = 1
 valign = 1
 autowrap = true
 clip_text = true
 
 [node name="option3" type="ColorRect" parent="."]
-editor/display_folded = true
 self_modulate = Color( 1, 1, 1, 0 )
 margin_left = 249.122
 margin_top = -121.448
-margin_right = 701.121
+margin_right = 701.122
 margin_bottom = -55.4478
 
 [node name="history3Button" type="TouchScreenButton" parent="option3"]
 self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( -18.9799, -6.37963 )
 scale = Vector2( 0.441645, 0.164842 )
-normal = ExtResource( 7 )
+normal = ExtResource( 3 )
 
 [node name="history3" type="Label" parent="option3"]
 self_modulate = Color( 1, 1, 1, 0 )
@@ -152,25 +211,43 @@ valign = 1
 autowrap = true
 clip_text = true
 
-[node name="light" type="Sprite" parent="."]
-self_modulate = Color( 1, 1, 1, 0 )
-position = Vector2( 624.247, -482.916 )
-texture = ExtResource( 9 )
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/transition = ExtResource( 10 )
+anims/question2 = SubResource( 2 )
+anims/transition = ExtResource( 5 )
 
 [node name="voltar" type="TouchScreenButton" parent="."]
 self_modulate = Color( 1, 1, 1, 0 )
-position = Vector2( 428.034, -24.0825 )
-scale = Vector2( 0.229481, 0.229481 )
-normal = ExtResource( 11 )
+position = Vector2( 415.542, 20.8098 )
+scale = Vector2( 0.137734, 0.136728 )
+normal = ExtResource( 3 )
+
+[node name="goBack" type="Label" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = 434.089
+margin_top = 26.5952
+margin_right = 549.089
+margin_bottom = 86.5952
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+text = "Voltar"
 
 [node name="musicButton" type="TouchScreenButton" parent="."]
 self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 650.283, -493.212 )
 scale = Vector2( 0.309, 0.309 )
-normal = ExtResource( 12 )
+normal = ExtResource( 6 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = -302.0
+margin_top = -489.0
+margin_right = 495.0
+margin_bottom = -424.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Com qual história você deseja jogar?"
+autowrap = true
+clip_text = true
 
 [connection signal="pressed" from="option1/history1Button" to="." method="_on_history1Button_pressed"]
 [connection signal="pressed" from="option2/history2Button" to="." method="_on_history2Button_pressed"]

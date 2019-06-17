@@ -15,14 +15,15 @@ func _ready():
 	set_process(true)
 	# history.volume_db = -20
 	#8 até 335: total de 327 pixels
-	var snd_file = File.new()
-	snd_file.open(global_config.stories["Story_"+str(global_config.storychosen)]["Story_sound_path"], File.READ)
-	var stream = AudioStreamOGGVorbis.new()
-	stream.data = snd_file.get_buffer(snd_file.get_len())
-	snd_file.close()
-	self.stream = stream
-	self.get_stream().set_loop(false) 
-	increment = float(327)/float(self.get_stream().get_length())
+	if(global_config.mode == 1):
+		var snd_file = File.new()
+		snd_file.open(global_config.stories["Story_"+str(global_config.storychosen)]["Story_sound_path"], File.READ)
+		var stream = AudioStreamOGGVorbis.new()
+		stream.data = snd_file.get_buffer(snd_file.get_len())
+		snd_file.close()
+		self.stream = stream
+		self.get_stream().set_loop(false) 
+		increment = float(327)/float(self.get_stream().get_length())
 
 
 #warning-ignore:unused_argument
@@ -89,10 +90,10 @@ func setAudioTime(var time):
 
 
 func _on_goForward_pressed():
-	if(self.get_playback_position()<151):
+	if(self.get_playback_position()<(self.get_stream().get_length()-5)):
 		self.play(self.get_playback_position() + 5)
 	else:
-		self.play(156)
+		self.play(self.get_stream().get_length()-1)
 	$play.set_texture(pause_asset)
 
 
@@ -110,7 +111,7 @@ func _on_keepPlaying_pressed():
 	$playerExibition.set_visible(false)
 	$keepPlaying.set_texture(null)
 	self.stop()
-	get_node("/root/Node2D/Popup").set_visible(false)
+	get_node("/root/Node2D/Popup1").set_visible(false)
 	get_node("/root/Node2D/polaroid3/half1_1").set_block_signals(false)
 	get_node("/root/Node2D/polaroid3/half1_2").set_block_signals(false)
 	get_node("/root/Node2D/polaroid3_2/half2_1").set_block_signals(false)

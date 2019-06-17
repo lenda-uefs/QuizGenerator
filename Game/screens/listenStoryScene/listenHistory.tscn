@@ -1,22 +1,28 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://screens/listenStoryScene/listenHistory.gd" type="Script" id=1]
-[ext_resource path="res://sprites/images/blueBackground.png" type="Texture" id=2]
-[ext_resource path="res://KGSecondChancesSketch.ttf" type="DynamicFontData" id=3]
-[ext_resource path="res://sprites/images/whiteBackground.png" type="Texture" id=4]
-[ext_resource path="res://sprites/texts/Iniciar jogo.png" type="Texture" id=5]
-[ext_resource path="res://sprites/texts/Voltar.png" type="Texture" id=6]
-[ext_resource path="res://sprites/images/3Porquinhos/livro_porquinhos.png" type="Texture" id=7]
-[ext_resource path="res://screens/musicPlayer.gd" type="Script" id=8]
-[ext_resource path="res://sprites/images/goBack.png" type="Texture" id=9]
-[ext_resource path="res://sprites/images/play.png" type="Texture" id=10]
-[ext_resource path="res://sprites/images/goForward.png" type="Texture" id=11]
-[ext_resource path="res://sprites/texts/ok.png" type="Texture" id=12]
-[ext_resource path="res://sprites/images/soundOn.png" type="Texture" id=13]
+[ext_resource path="res://212 Queenie Sans.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://sprites/images/whiteBackground.png" type="Texture" id=3]
+[ext_resource path="res://sprites/images/3Porquinhos/livro_porquinhos.png" type="Texture" id=4]
+[ext_resource path="res://screens/musicPlayer.gd" type="Script" id=5]
+[ext_resource path="res://sprites/images/goBack.png" type="Texture" id=6]
+[ext_resource path="res://sprites/images/play.png" type="Texture" id=7]
+[ext_resource path="res://sprites/images/goForward.png" type="Texture" id=8]
+[ext_resource path="res://KGSecondChancesSketch.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://sprites/texts/ok.png" type="Texture" id=10]
+[ext_resource path="res://sprites/images/soundOn.png" type="Texture" id=11]
 
 [sub_resource type="DynamicFont" id=1]
-size = 41
-font_data = ExtResource( 3 )
+size = 70
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 60
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
 
 [sub_resource type="Animation" id=2]
 length = 1.5
@@ -57,7 +63,7 @@ tracks/2/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("iniciarJogo:self_modulate")
+tracks/3/path = NodePath("whiteBackground:self_modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -69,7 +75,7 @@ tracks/3/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("whiteBackground:self_modulate")
+tracks/4/path = NodePath("ColorRect5:self_modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -81,7 +87,7 @@ tracks/4/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("voltar:self_modulate")
+tracks/5/path = NodePath("history/goForward:self_modulate")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -93,7 +99,7 @@ tracks/5/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("ColorRect5:self_modulate")
+tracks/6/path = NodePath("history/playerBlank:self_modulate")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -105,7 +111,7 @@ tracks/6/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("history/goForward:self_modulate")
+tracks/7/path = NodePath("history/playerExibition:self_modulate")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -117,7 +123,7 @@ tracks/7/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("history/playerBlank:self_modulate")
+tracks/8/path = NodePath("history/timePassing:self_modulate")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -129,7 +135,7 @@ tracks/8/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("history/playerExibition:self_modulate")
+tracks/9/path = NodePath("history/backTimingPassing:self_modulate")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
@@ -141,7 +147,7 @@ tracks/9/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("history/timePassing:self_modulate")
+tracks/10/path = NodePath("title:self_modulate")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/imported = false
@@ -153,7 +159,7 @@ tracks/10/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("history/backTimingPassing:self_modulate")
+tracks/11/path = NodePath("musicButton:self_modulate")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/imported = false
@@ -165,7 +171,7 @@ tracks/11/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("iniciarJogo2:self_modulate")
+tracks/12/path = NodePath("goBack:self_modulate")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/imported = false
@@ -177,7 +183,7 @@ tracks/12/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 tracks/13/type = "value"
-tracks/13/path = NodePath("title:self_modulate")
+tracks/13/path = NodePath("playgame:self_modulate")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/imported = false
@@ -188,26 +194,15 @@ tracks/13/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
-tracks/14/type = "value"
-tracks/14/path = NodePath("musicButton:self_modulate")
-tracks/14/interp = 1
-tracks/14/loop_wrap = true
-tracks/14/imported = false
-tracks/14/enabled = true
-tracks/14/keys = {
-"times": PoolRealArray( 0, 1.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
-}
 
 [sub_resource type="DynamicFont" id=3]
-size = 30
-font_data = ExtResource( 3 )
+size = 60
+outline_size = 1
+font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=4]
 size = 20
-font_data = ExtResource( 3 )
+font_data = ExtResource( 9 )
 
 [sub_resource type="Theme" id=5]
 BoxContainer/constants/separation = 4
@@ -1224,12 +1219,7 @@ margin_left = -524.0
 margin_top = -314.0
 margin_right = 501.0
 margin_bottom = 288.0
-color = Color( 0.611765, 0.862745, 0.972549, 0.905882 )
-
-[node name="paintedBlueBackground" type="Sprite" parent="."]
-position = Vector2( -12.3316, -13.3212 )
-scale = Vector2( 2.54707, 0.591241 )
-texture = ExtResource( 2 )
+color = Color( 0.662745, 0.882353, 0.964706, 1 )
 
 [node name="whiteBackground" type="ColorRect" parent="."]
 self_modulate = Color( 1, 1, 1, 0 )
@@ -1253,27 +1243,43 @@ clip_text = true
 
 [node name="iniciarJogo" type="TouchScreenButton" parent="."]
 self_modulate = Color( 1, 1, 1, 0 )
-position = Vector2( 0.410604, -29.3181 )
-scale = Vector2( 0.441447, 0.168712 )
-normal = ExtResource( 4 )
+position = Vector2( 0.410604, -22.8021 )
+scale = Vector2( 0.441447, 0.151007 )
+normal = ExtResource( 3 )
 
-[node name="iniciarJogo2" type="TouchScreenButton" parent="."]
+[node name="playgame" type="Label" parent="."]
 self_modulate = Color( 1, 1, 1, 0 )
-position = Vector2( 142.491, -9.37695 )
-scale = Vector2( 0.258323, 0.258323 )
-normal = ExtResource( 5 )
+margin_left = 143.638
+margin_top = -14.8323
+margin_right = 352.638
+margin_bottom = 45.1677
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Iniciar jogo"
 
 [node name="voltar" type="TouchScreenButton" parent="."]
 self_modulate = Color( 1, 1, 1, 0 )
-position = Vector2( 356.188, 234.187 )
-scale = Vector2( 0.303151, 0.303151 )
-normal = ExtResource( 6 )
+position = Vector2( 366.714, 227.871 )
+scale = Vector2( 0.112195, 0.116113 )
+normal = ExtResource( 3 )
+
+[node name="goBack" type="Label" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = 371.0
+margin_top = 230.0
+margin_right = 486.0
+margin_bottom = 290.0
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Voltar"
+align = 1
+valign = 1
 
 [node name="book" type="Sprite" parent="."]
 self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( -218.908, -2.2298 )
 scale = Vector2( 0.265515, 0.265515 )
-texture = ExtResource( 7 )
+texture = ExtResource( 4 )
 
 [node name="ColorRect5" type="ColorRect" parent="."]
 self_modulate = Color( 1, 1, 1, 0 )
@@ -1287,26 +1293,25 @@ color = Color( 0.823529, 0.368627, 0.317647, 1 )
 anims/transition3 = SubResource( 2 )
 
 [node name="history" type="AudioStreamPlayer" parent="."]
-editor/display_folded = true
-script = ExtResource( 8 )
+script = ExtResource( 5 )
 
 [node name="goBack" type="TouchScreenButton" parent="history"]
 self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 8.55624, 543.945 )
 scale = Vector2( 1.2854, 1.2854 )
-normal = ExtResource( 9 )
+normal = ExtResource( 6 )
 
 [node name="play" type="TouchScreenButton" parent="history"]
 self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 75.0211, 540.256 )
 scale = Vector2( 1.285, 1.285 )
-normal = ExtResource( 10 )
+normal = ExtResource( 7 )
 
 [node name="goForward" type="TouchScreenButton" parent="history"]
 self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 112.694, 543.579 )
 scale = Vector2( 1.285, 1.285 )
-normal = ExtResource( 11 )
+normal = ExtResource( 8 )
 
 [node name="Timer" type="Timer" parent="history"]
 
@@ -1320,14 +1325,16 @@ color = Color( 0.823529, 0.368627, 0.317647, 1 )
 
 [node name="timePassing" type="Label" parent="history"]
 self_modulate = Color( 1, 1, 1, 0 )
-margin_left = 546.727
-margin_top = 537.908
-margin_right = 634.727
-margin_bottom = 577.908
+margin_left = 547.563
+margin_top = 532.472
+margin_right = 635.563
+margin_bottom = 592.472
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_outline_modulate = Color( 1, 1, 1, 1 )
 text = "00:00"
+align = 1
+valign = 1
 
 [node name="playerBlank" type="ColorRect" parent="history"]
 self_modulate = Color( 1, 1, 1, 0 )
@@ -1429,13 +1436,13 @@ theme = SubResource( 5 )
 [node name="ok" type="TouchScreenButton" parent="Popup"]
 position = Vector2( 542.235, 361.472 )
 scale = Vector2( 0.236314, 0.236314 )
-normal = ExtResource( 12 )
+normal = ExtResource( 10 )
 
 [node name="musicButton" type="TouchScreenButton" parent="."]
 self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 439.931, -303.857 )
 scale = Vector2( 0.309, 0.309 )
-normal = ExtResource( 13 )
+normal = ExtResource( 11 )
 
 [connection signal="pressed" from="iniciarJogo" to="." method="_on_iniciarJogo_pressed"]
 [connection signal="pressed" from="voltar" to="." method="_on_voltar_pressed"]

@@ -1,55 +1,53 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://screens/titleScreen/titleScreenManager.gd" type="Script" id=1]
-[ext_resource path="res://sprites/images/blueBackground.png" type="Texture" id=2]
-[ext_resource path="res://sprites/images/cloud.png" type="Texture" id=3]
-[ext_resource path="res://sprites/images/sun.png" type="Texture" id=4]
-[ext_resource path="res://sprites/images/tree.png" type="Texture" id=5]
-[ext_resource path="res://sprites/images/grass.png" type="Texture" id=6]
-[ext_resource path="res://sprites/images/girl1.png" type="Texture" id=7]
-[ext_resource path="res://sprites/images/girl2.png" type="Texture" id=8]
-[ext_resource path="res://sprites/images/boy.png" type="Texture" id=9]
-[ext_resource path="res://sprites/images/toy.png" type="Texture" id=10]
-[ext_resource path="res://sprites/images/whiteBackground.png" type="Texture" id=11]
-[ext_resource path="res://sprites/texts/Jogar.png" type="Texture" id=12]
-[ext_resource path="res://sprites/texts/instructions.png" type="Texture" id=13]
-[ext_resource path="res://sprites/texts/Creditos.png" type="Texture" id=14]
-[ext_resource path="res://transition.tres" type="Animation" id=15]
-[ext_resource path="res://sprites/texts/about.png" type="Texture" id=16]
-[ext_resource path="res://sprites/images/logo.png" type="Texture" id=17]
-[ext_resource path="res://sprites/texts/Voltar.png" type="Texture" id=18]
-[ext_resource path="res://sprites/images/soundOn.png" type="Texture" id=19]
-[ext_resource path="res://KGSecondChancesSketch.ttf" type="DynamicFontData" id=20]
+[ext_resource path="res://sprites/images/new/image.png" type="Texture" id=2]
+[ext_resource path="res://sprites/images/new/check.png" type="Texture" id=3]
+[ext_resource path="res://sprites/images/whiteBackground.png" type="Texture" id=4]
+[ext_resource path="res://212 Queenie Sans.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://transition.tres" type="Animation" id=6]
+[ext_resource path="res://sprites/texts/about.png" type="Texture" id=7]
+[ext_resource path="res://sprites/images/logo.png" type="Texture" id=8]
+[ext_resource path="res://sprites/images/soundOn.png" type="Texture" id=9]
 
-[sub_resource type="Animation" id=1]
-resource_name = "creditScreen"
+[sub_resource type="DynamicFont" id=1]
+size = 160
+outline_size = 2
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 300
+outline_size = 3
+font_data = ExtResource( 5 )
+
+[sub_resource type="Animation" id=3]
 length = 2.0
 tracks/0/type = "value"
-tracks/0/path = NodePath("../option1:rect_position")
+tracks/0/path = NodePath("../creditos:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 249.122, -251.791 ), Vector2( 719.163, -251.791 ) ]
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("../option1:self_modulate")
+tracks/1/path = NodePath("../logo2:self_modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("../option1/play:self_modulate")
+tracks/2/path = NodePath("../option1:self_modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -61,7 +59,7 @@ tracks/2/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("../instructions:self_modulate")
+tracks/3/path = NodePath("../option1/play2:self_modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -73,7 +71,7 @@ tracks/3/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("../option3:rect_position")
+tracks/4/path = NodePath("../option2:self_modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -82,10 +80,10 @@ tracks/4/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 249.122, -129.204 ), Vector2( 720.329, -129.204 ) ]
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("../option3/sprite3:position")
+tracks/5/path = NodePath("../option2/instructions2:self_modulate")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
@@ -94,10 +92,10 @@ tracks/5/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 227.837, 31.4136 ), Vector2( 227.837, 31.4136 ) ]
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("../option3/creditos:self_modulate")
+tracks/6/path = NodePath("../option3:self_modulate")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -109,7 +107,7 @@ tracks/6/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("../option3/sprite3:self_modulate")
+tracks/7/path = NodePath("../option3/credits2:self_modulate")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
@@ -118,84 +116,24 @@ tracks/7/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0.780392 ), Color( 1, 1, 1, 0 ) ]
+"values": [ Color( 1, 1, 1, 0.916667 ), Color( 1, 1, 1, 0 ) ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("../option3:self_modulate")
+tracks/8/path = NodePath("../goBack/goBack2:self_modulate")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
 tracks/8/enabled = true
 tracks/8/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
-}
-tracks/9/type = "value"
-tracks/9/path = NodePath("../creditos:self_modulate")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/keys = {
 "times": PoolRealArray( 0, 1, 2 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
-}
-tracks/10/type = "value"
-tracks/10/path = NodePath("../logo2:self_modulate")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/keys = {
-"times": PoolRealArray( 0, 1, 2 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
-}
-tracks/11/type = "value"
-tracks/11/path = NodePath("../goBack:self_modulate")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/keys = {
-"times": PoolRealArray( 0, 1, 2 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
-}
-tracks/12/type = "value"
-tracks/12/path = NodePath("../goBack/voltar:self_modulate")
-tracks/12/interp = 1
-tracks/12/loop_wrap = true
-tracks/12/imported = false
-tracks/12/enabled = true
-tracks/12/keys = {
-"times": PoolRealArray( 0, 1, 2 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
-}
-tracks/13/type = "value"
-tracks/13/path = NodePath("../goBack/voltar2:self_modulate")
-tracks/13/interp = 1
-tracks/13/loop_wrap = true
-tracks/13/imported = false
-tracks/13/enabled = true
-tracks/13/keys = {
-"times": PoolRealArray( 0, 1, 2 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0.916667 ) ]
 }
 
 [sub_resource type="DynamicFont" id=4]
-size = 48
-font_data = ExtResource( 20 )
+size = 120
+font_data = ExtResource( 5 )
 
 [node name="Node2D" type="Node2D"]
 position = Vector2( 309.423, 476.442 )
@@ -207,214 +145,147 @@ margin_left = -310.0
 margin_top = -477.0
 margin_right = 715.0
 margin_bottom = 123.0
-color = Color( 0.607843, 0.835294, 0.921569, 1 )
+color = Color( 0.662745, 0.882353, 0.964706, 1 )
 
-[node name="paintedBackground" type="Sprite" parent="."]
-position = Vector2( 202.307, -173.184 )
-scale = Vector2( 2.53452, 0.581243 )
+[node name="backgroundImage" type="NinePatchRect" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = -290.396
+margin_top = -403.766
+margin_right = 240.604
+margin_bottom = 55.234
 texture = ExtResource( 2 )
 
-[node name="cloud1" type="Sprite" parent="."]
+[node name="option1" type="Sprite" parent="."]
 self_modulate = Color( 1, 1, 1, 0 )
-position = Vector2( -90.204, -407.091 )
-scale = Vector2( 0.453492, 0.476212 )
+position = Vector2( 349.064, -224.007 )
+scale = Vector2( 0.414043, 0.414043 )
 texture = ExtResource( 3 )
-
-[node name="cloud2" type="Sprite" parent="."]
-self_modulate = Color( 1, 1, 1, 0 )
-position = Vector2( 427.781, -423.701 )
-scale = Vector2( 0.431906, 0.453545 )
-texture = ExtResource( 3 )
-
-[node name="cloud4" type="Sprite" parent="."]
-self_modulate = Color( 1, 1, 1, 0 )
-position = Vector2( 255.053, -323.543 )
-scale = Vector2( 0.381013, 0.400102 )
-texture = ExtResource( 3 )
-
-[node name="cloud3" type="Sprite" parent="."]
-self_modulate = Color( 1, 1, 1, 0 )
-position = Vector2( 766.919, -345.514 )
-scale = Vector2( 0.334746, 0.351517 )
-texture = ExtResource( 3 )
-
-[node name="sun" type="Sprite" parent="."]
-self_modulate = Color( 1, 1, 1, 0 )
-position = Vector2( 1.23616, -398.065 )
-scale = Vector2( 1.0626, 1.03598 )
-texture = ExtResource( 4 )
-
-[node name="tree" type="Sprite" parent="."]
-editor/display_folded = true
-self_modulate = Color( 1, 1, 1, 0 )
-position = Vector2( -15.6238, -105.146 )
-scale = Vector2( 0.216024, 0.272734 )
-texture = ExtResource( 5 )
-
-[node name="grass" type="Sprite" parent="tree"]
-self_modulate = Color( 1, 1, 1, 0 )
-position = Vector2( -620.853, 707.168 )
-scale = Vector2( 0.559431, 0.600513 )
-texture = ExtResource( 6 )
-
-[node name="grass2" type="Sprite" parent="tree"]
-self_modulate = Color( 1, 1, 1, 0 )
-position = Vector2( 506.703, 707.168 )
-scale = Vector2( 0.559431, 0.600513 )
-texture = ExtResource( 6 )
-
-[node name="grass3" type="Sprite" parent="tree"]
-self_modulate = Color( 1, 1, 1, 0 )
-position = Vector2( 1871.97, 707.168 )
-scale = Vector2( 0.559431, 0.600513 )
-texture = ExtResource( 6 )
-
-[node name="grass4" type="Sprite" parent="tree"]
-self_modulate = Color( 1, 1, 1, 0 )
-position = Vector2( 2640, 707.168 )
-scale = Vector2( 0.559431, 0.600513 )
-texture = ExtResource( 6 )
-
-[node name="kid" type="Sprite" parent="."]
-self_modulate = Color( 1, 1, 1, 0 )
-position = Vector2( -241.57, 38.8711 )
-scale = Vector2( 0.197812, 0.194888 )
-texture = ExtResource( 7 )
-
-[node name="kid2" type="Sprite" parent="."]
-self_modulate = Color( 1, 1, 1, 0 )
-position = Vector2( -120.123, -11.7224 )
-scale = Vector2( 0.213833, 0.197288 )
-texture = ExtResource( 8 )
-
-[node name="kid3" type="Sprite" parent="."]
-self_modulate = Color( 1, 1, 1, 0 )
-position = Vector2( 114.912, 40.4555 )
-scale = Vector2( 0.198012, 0.202244 )
-texture = ExtResource( 9 )
-
-[node name="toy" type="Sprite" parent="."]
-self_modulate = Color( 1, 1, 1, 0 )
-position = Vector2( 270.154, 53.312 )
-scale = Vector2( 0.273314, 0.273314 )
-texture = ExtResource( 10 )
-
-[node name="option1" type="ColorRect" parent="."]
-editor/display_folded = true
-self_modulate = Color( 1, 1, 1, 0 )
-margin_left = 719.541
-margin_top = -251.791
-margin_right = 1171.54
-margin_bottom = -189.791
-color = Color( 1, 1, 1, 0.478431 )
 
 [node name="play" type="TouchScreenButton" parent="option1"]
 self_modulate = Color( 1, 1, 1, 0 )
-position = Vector2( -18.8907, -6.51917 )
-scale = Vector2( 0.44149, 0.154452 )
-normal = ExtResource( 11 )
+position = Vector2( -134.384, -80.6372 )
+scale = Vector2( 0.803206, 0.344136 )
+normal = ExtResource( 4 )
 
-[node name="play2" type="TouchScreenButton" parent="option1"]
-position = Vector2( 148.898, 3.25494 )
-scale = Vector2( 0.28, 0.28 )
-normal = ExtResource( 12 )
-
-[node name="instructions" type="TouchScreenButton" parent="."]
+[node name="play2" type="Label" parent="option1"]
 self_modulate = Color( 1, 1, 1, 0 )
-position = Vector2( 390.74, -183.674 )
-scale = Vector2( 0.269, 0.269 )
-normal = ExtResource( 13 )
+margin_left = 256.604
+margin_top = -87.0591
+margin_right = 601.604
+margin_bottom = 92.9409
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+text = "Jogar"
 
-[node name="option3" type="ColorRect" parent="."]
-editor/display_folded = true
+[node name="option2" type="Sprite" parent="."]
 self_modulate = Color( 1, 1, 1, 0 )
-margin_left = 719.541
-margin_top = -129.204
-margin_right = 1171.54
-margin_bottom = -67.2042
-color = Color( 1, 1, 1, 0.478431 )
+position = Vector2( 352.28, -133.037 )
+scale = Vector2( 0.414, 0.414 )
+texture = ExtResource( 3 )
 
-[node name="sprite3" type="Sprite" parent="option3"]
-visible = false
+[node name="instructions" type="TouchScreenButton" parent="option2"]
 self_modulate = Color( 1, 1, 1, 0 )
-position = Vector2( 227.837, 31.4136 )
-scale = Vector2( 0.442101, 0.154089 )
-texture = ExtResource( 11 )
+position = Vector2( -134.384, -80.6372 )
+scale = Vector2( 0.823259, 0.344136 )
+normal = ExtResource( 4 )
 
-[node name="creditos" type="TouchScreenButton" parent="option3"]
+[node name="instructions2" type="Label" parent="option2"]
 self_modulate = Color( 1, 1, 1, 0 )
-position = Vector2( -17.323, -5.38232 )
-scale = Vector2( 0.442206, 0.155961 )
-normal = ExtResource( 11 )
+margin_left = 166.0
+margin_top = -80.7181
+margin_right = 775.0
+margin_bottom = 99.2819
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+text = "Instruções"
 
-[node name="creditos2" type="TouchScreenButton" parent="option3"]
-position = Vector2( 173.272, 7.6499 )
-scale = Vector2( 0.236833, 0.236833 )
-normal = ExtResource( 14 )
+[node name="option3" type="Sprite" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 351.712, -43.1662 )
+scale = Vector2( 0.414, 0.414 )
+texture = ExtResource( 3 )
+
+[node name="credits" type="TouchScreenButton" parent="option3"]
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -134.384, -80.6372 )
+scale = Vector2( 0.796521, 0.344136 )
+normal = ExtResource( 4 )
+
+[node name="credits2" type="Label" parent="option3"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = 206.555
+margin_top = -82.2674
+margin_right = 671.555
+margin_bottom = 97.7326
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+text = "Créditos"
+
+[node name="goBack" type="TouchScreenButton" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 391.122, 17.0418 )
+scale = Vector2( 0.199483, 0.165898 )
+normal = ExtResource( 4 )
+
+[node name="goBack2" type="Label" parent="goBack"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = 180.554
+margin_top = 50.6133
+margin_right = 917.554
+margin_bottom = 423.613
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+text = "Voltar"
+align = 1
+valign = 1
+autowrap = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("")
-anims/creditScreen = SubResource( 1 )
-anims/transition = ExtResource( 15 )
+anims/creditScreen = SubResource( 3 )
+anims/transition = ExtResource( 6 )
 
 [node name="creditos" type="Sprite" parent="."]
 visible = false
 self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 454.625, -149.114 )
 scale = Vector2( 0.180867, 0.180867 )
-texture = ExtResource( 16 )
+texture = ExtResource( 7 )
 
 [node name="logo2" type="Sprite" parent="."]
 visible = false
 self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 478.245, -126.074 )
 scale = Vector2( 0.12217, 0.12217 )
-texture = ExtResource( 17 )
-
-[node name="goBack" type="ColorRect" parent="."]
-editor/display_folded = true
-self_modulate = Color( 1, 1, 1, 0 )
-margin_left = 380.0
-margin_top = 2.0
-margin_right = 602.0
-margin_bottom = 42.0
-color = Color( 1, 1, 1, 0.478431 )
-
-[node name="voltar" type="TouchScreenButton" parent="goBack"]
-self_modulate = Color( 1, 1, 1, 0 )
-position = Vector2( -9.04287, -3.41183 )
-scale = Vector2( 0.217138, 0.0976881 )
-normal = ExtResource( 11 )
-
-[node name="voltar2" type="TouchScreenButton" parent="goBack"]
-self_modulate = Color( 1, 1, 1, 0 )
-position = Vector2( 67.1147, 3.4397 )
-scale = Vector2( 0.22237, 0.22237 )
-normal = ExtResource( 18 )
+texture = ExtResource( 8 )
 
 [node name="musicButton" type="TouchScreenButton" parent="."]
 self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 649.464, -467.708 )
 scale = Vector2( 0.308931, 0.308931 )
-normal = ExtResource( 19 )
+normal = ExtResource( 9 )
 
 [node name="gameTitle" type="Label" parent="."]
 self_modulate = Color( 1, 1, 1, 0 )
-margin_left = 249.0
-margin_top = -386.0
-margin_right = 700.0
-margin_bottom = -275.0
+margin_left = 250.108
+margin_top = -413.701
+margin_right = 701.108
+margin_bottom = -302.701
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "Game title"
 align = 1
+valign = 1
 autowrap = true
 clip_text = true
 
 [connection signal="pressed" from="option1/play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="instructions" to="." method="_on_instructions_pressed"]
-[connection signal="pressed" from="option3/creditos" to="." method="_on_creditos_pressed"]
-[connection signal="pressed" from="option3/creditos2" to="." method="_on_creditos_pressed"]
-[connection signal="pressed" from="goBack/voltar" to="." method="_on_voltar_pressed"]
+[connection signal="pressed" from="option2/instructions" to="." method="_on_instructions_pressed"]
+[connection signal="pressed" from="option3/credits" to="." method="_on_creditos_pressed"]
+[connection signal="pressed" from="goBack" to="." method="_on_voltar_pressed"]
 [connection signal="pressed" from="musicButton" to="." method="_on_musicButton_pressed"]

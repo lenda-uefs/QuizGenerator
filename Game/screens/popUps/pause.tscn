@@ -8,7 +8,6 @@
 [ext_resource path="res://sprites/images/soundOn.png" type="Texture" id=6]
 [ext_resource path="res://sprites/texts/Sair.png" type="Texture" id=7]
 
-
 [sub_resource type="Animation" id=1]
 resource_name = "Pausemenu"
 length = 1.5
@@ -356,7 +355,7 @@ editor/display_folded = true
 self_modulate = Color( 1, 1, 1, 0 )
 margin_left = 475.386
 margin_top = -233.986
-margin_right = 927.386
+margin_right = 927.387
 margin_bottom = -171.986
 color = Color( 1, 1, 1, 0.478431 )
 
@@ -397,7 +396,7 @@ editor/display_folded = true
 self_modulate = Color( 1, 1, 1, 0 )
 margin_left = 435.323
 margin_top = -59.467
-margin_right = 887.322
+margin_right = 887.321
 margin_bottom = 2.5332
 color = Color( 1, 1, 1, 0.478431 )
 

@@ -8,6 +8,7 @@ var musicOn = preload("res://sprites/images/soundOn.png")
 
 
 func _ready():
+	$background.set_frame_color(Color(global_config.game_color["r"], global_config.game_color["g"], global_config.game_color["b"]))
 	get_tree().set_auto_accept_quit(false)
 	get_tree().set_quit_on_go_back(false)
 	if(global_config.music == true):

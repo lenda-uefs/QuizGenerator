@@ -9,18 +9,19 @@ var musicOn = preload("res://sprites/images/soundOn.png")
 
 
 func _ready():
+	$Bluebackground.set_frame_color(Color(global_config.game_color["r"], global_config.game_color["g"], global_config.game_color["b"]))
 	if(global_config.music == true):
 		$musicButton.set_texture(musicOn)
 	else:
 		$musicButton.set_texture(musicOff)
 	global_config.level = 0
 	$title.set_text(global_config.stories["Story_" + str(global_config.storychosen)]["Story_title"])
-	global_config.best_fit_check(41, $title)
+	global_config.best_fit_check(70, $title)
 	$book.set_texture(global_config.stories["Story_" + str(global_config.storychosen)]["Story_cover"])
 	get_tree().set_auto_accept_quit(false)
 	get_tree().set_quit_on_go_back(false)
-	get_node("/root/Node2D/AnimationPlayer").play("transition3", -1, 1.0, false)
-	yield(get_node("/root/Node2D/AnimationPlayer"), "animation_finished")
+	$AnimationPlayer.play("transition3", -1, 1.0, false)
+	yield($AnimationPlayer, "animation_finished")
 
 
 func _on_iniciarJogo_pressed():
