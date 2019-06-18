@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://screens/configurationScene/json_manager.gd" type="Script" id=1]
 [ext_resource path="res://sprites/images/whiteBackground.png" type="Texture" id=2]
@@ -148,6 +148,142 @@ tracks/10/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
+[sub_resource type="Animation" id=7]
+resource_name = "config_done2"
+length = 4.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Popup2/engre1:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Popup2/engre1:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 180.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Popup2/engre2:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Popup2/engre2:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -15.0, -195.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Popup2/engre4:self_modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 1.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Popup2/engre4:rotation_degrees")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 1.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 180.0 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Popup2/engre3:self_modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 1.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Popup2/engre3:rotation_degrees")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0, 1.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 180.0 ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Popup2/Label:self_modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0, 1.8, 2, 2.2, 3.2, 3.4, 3.9, 4.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Popup2/Label:valign")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 1.8, 2, 3.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 0, 1, 1 ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Popup2/Label:text")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0, 1.8, 2, 3.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "Aguarde! Estamos carregando o jogo...", "Aguarde! Estamos carregando o jogo...", "Tudo pronto! Preparado?", "Vamos lá!" ]
+}
+
 [sub_resource type="Animation" id=3]
 resource_name = "configuration"
 length = 3.5
@@ -190,6 +326,59 @@ tracks/2/keys = {
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("Popup/engre3:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 3.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 360.0 ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "configuration2"
+length = 3.5
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Popup2/engre1:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 3.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 360.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Popup2/engre2:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 3.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -15.0, -375.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Popup2/engre4:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 3.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 360.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Popup2/engre3:rotation_degrees")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -545,7 +734,9 @@ texture = ExtResource( 4 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/config_done = SubResource( 2 )
+anims/config_done2 = SubResource( 7 )
 anims/configuration = SubResource( 3 )
+anims/configuration2 = SubResource( 8 )
 anims/logoAnimation = ExtResource( 5 )
 anims/logo_leaving = SubResource( 4 )
 anims/opening = SubResource( 5 )
@@ -571,26 +762,80 @@ margin_bottom = 528.0
 custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
-text = "Muito bem! Agora, por favor, aguarde enquanto configuramos algumas coisinhas..."
+text = "Vamos lá!"
 align = 1
+valign = 1
 autowrap = true
 
 [node name="engre1" type="Sprite" parent="Popup"]
+self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 443.811, 326.726 )
+rotation = 6.28319
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 6 )
 
 [node name="engre3" type="Sprite" parent="Popup"]
+self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 598.24, 359.99 )
+rotation = 6.28319
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 6 )
 
 [node name="engre4" type="Sprite" parent="Popup"]
+self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 560.837, 250.781 )
+rotation = 6.28319
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 6 )
 
 [node name="engre2" type="Sprite" parent="Popup"]
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 525.309, 323.094 )
+rotation = -6.54498
+scale = Vector2( 0.14, 0.14 )
+texture = ExtResource( 6 )
+
+[node name="Popup2" type="Popup" parent="."]
+margin_left = -309.0
+margin_top = -475.0
+margin_right = 715.0
+margin_bottom = 124.0
+
+[node name="ColorRect" type="ColorRect" parent="Popup2"]
+margin_left = -0.950012
+margin_top = -0.0529022
+margin_right = 1023.05
+margin_bottom = 598.947
+color = Color( 1, 1, 1, 0.607843 )
+
+[node name="Label" type="Label" parent="Popup2"]
+margin_left = 113.0
+margin_top = 61.0
+margin_right = 952.0
+margin_bottom = 528.0
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+text = "Aguarde! Estamos carregando o jogo..."
+align = 1
+autowrap = true
+
+[node name="engre1" type="Sprite" parent="Popup2"]
+position = Vector2( 443.811, 326.726 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 6 )
+
+[node name="engre3" type="Sprite" parent="Popup2"]
+position = Vector2( 598.24, 359.99 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 6 )
+
+[node name="engre4" type="Sprite" parent="Popup2"]
+position = Vector2( 560.837, 250.781 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 6 )
+
+[node name="engre2" type="Sprite" parent="Popup2"]
 position = Vector2( 525.309, 323.094 )
 rotation = -0.261799
 scale = Vector2( 0.14, 0.14 )
