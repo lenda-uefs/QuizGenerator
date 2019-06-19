@@ -36,20 +36,6 @@ func load_dialogue(file_path) -> Dictionary:
 	return dialogue
 
 
-func delete_old_Files():
-	dir = Directory.new()
-	if dir.open("user://images") == OK:
-		dir.list_dir_begin()
-		var file_name = dir.get_next()
-		while (file_name != ""):
-			if(!dir.current_is_dir()):
-				print("Found file: " + file_name)
-				dir.remove(file_name)
-			file_name = dir.get_next()
-	else:
-		print("An error occurred when trying to access the path pra apagar.")
-
-
 func _count_old_configFiles() -> int:
 	dir = Directory.new()
 	var nFiles = 0
@@ -92,10 +78,19 @@ func _on_FileDialog_file_selected(path):
 
 
 func _set_game_configuration(dic):
+	var path
 	global_config.game_title = dic["Game_title"]
 	global_config.stories = dic["Stories"]
 	var snd_file = File.new()
-	snd_file.open(dic["Background_sound_path"], File.READ)
+	path = dic["Background_sound_path"]
+	path.erase(0,path.find_last("/")+1)
+	path = "user://" + path
+	if(nfiles == 0):
+		dir = Directory.new()
+		dir.copy(dic["Background_sound_path"], path)
+		snd_file.open(dic["Background_sound_path"], File.READ)
+	else:
+		snd_file.open(path, File.READ)
 	var stream = AudioStreamOGGVorbis.new()
 	stream.data = snd_file.get_buffer(snd_file.get_len())
 	snd_file.close()
@@ -108,7 +103,7 @@ func _set_game_configuration(dic):
 		global_config.game_color["a"] = 1
 	if(!dic["Title_screen_background"].empty()):
 		if(nfiles>0):
-			var path = dic["Title_screen_background"]
+			path = dic["Title_screen_background"]
 			path.erase(0,path.find_last("/")+1)
 			path = "user://images/" + path
 			global_config.title_screen_background = _load_process(tex, img, path)
@@ -125,6 +120,10 @@ func _set_game_configuration(dic):
 func _importInsideImages():
 	var path
 	for h in range(1, global_config.stories.size()+1):
+		path = global_config.stories["Story_" + str(h)]["Story_sound_path"]
+		path.erase(0,path.find_last("/")+1)
+		path = "user://" + path
+		global_config.stories["Story_" + str(h)]["Story_sound_path"] = path
 		for k in range (1, global_config.stories["Story_" + str(h)]["Questions"].size()+1):
 			for j in range (1, 3):
 				path = global_config.stories["Story_" + str(h)]["Questions"]["Question_" + str(k)]["option_" + str(j)]
@@ -150,7 +149,13 @@ func _importInsideImages():
 
 
 func _importImages():
+	var path
 	for h in range(1, global_config.stories.size()+1):
+		path = global_config.stories["Story_" + str(h)]["Story_sound_path"]
+		path.erase(0,path.find_last("/")+1)
+		path = "user://" + path
+		dir = Directory.new()
+		dir.copy(global_config.stories["Story_" + str(h)]["Story_sound_path"], path)
 		for k in range (1, global_config.stories["Story_" + str(h)]["Questions"].size()+1):
 			for j in range (1, 3):
 				global_config.stories["Story_" + str(h)]["Questions"]["Question_" + str(k)]["option_" + str(j)] = _load_process(tex, img, global_config.stories["Story_" + str(h)]["Questions"]["Question_" + str(k)]["option_" + str(j)]) 

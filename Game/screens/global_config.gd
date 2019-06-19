@@ -86,7 +86,8 @@ func music_off():
 
 #Função que seta as configurações da música que deve ser tocada na abertura do jogo
 func playSong():
-	self.add_child(background_sound)
+	if(!background_sound.is_inside_tree()):
+		self.add_child(background_sound)
 	#background_sound.stream = load("res://sound/Ukulele_Beach.ogg")
 	background_sound.volume_db = -20
 

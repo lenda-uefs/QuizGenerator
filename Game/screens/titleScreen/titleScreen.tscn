@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://screens/titleScreen/titleScreenManager.gd" type="Script" id=1]
 [ext_resource path="res://sprites/images/new/image.png" type="Texture" id=2]
@@ -135,6 +135,12 @@ tracks/8/keys = {
 size = 120
 font_data = ExtResource( 5 )
 
+[sub_resource type="DynamicFont" id=5]
+size = 48
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 5 )
+
 [node name="Node2D" type="Node2D"]
 position = Vector2( 309.423, 476.442 )
 script = ExtResource( 1 )
@@ -148,7 +154,6 @@ margin_bottom = 123.0
 color = Color( 0.662745, 0.882353, 0.964706, 1 )
 
 [node name="backgroundImage" type="NinePatchRect" parent="."]
-self_modulate = Color( 1, 1, 1, 0 )
 margin_left = -290.396
 margin_top = -403.766
 margin_right = 240.604
@@ -156,7 +161,7 @@ margin_bottom = 55.234
 texture = ExtResource( 2 )
 
 [node name="option1" type="Sprite" parent="."]
-self_modulate = Color( 1, 1, 1, 0 )
+editor/display_folded = true
 position = Vector2( 349.064, -224.007 )
 scale = Vector2( 0.414043, 0.414043 )
 texture = ExtResource( 3 )
@@ -168,7 +173,6 @@ scale = Vector2( 0.803206, 0.344136 )
 normal = ExtResource( 4 )
 
 [node name="play2" type="Label" parent="option1"]
-self_modulate = Color( 1, 1, 1, 0 )
 margin_left = 256.604
 margin_top = -87.0591
 margin_right = 601.604
@@ -179,7 +183,7 @@ custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 text = "Jogar"
 
 [node name="option2" type="Sprite" parent="."]
-self_modulate = Color( 1, 1, 1, 0 )
+editor/display_folded = true
 position = Vector2( 352.28, -133.037 )
 scale = Vector2( 0.414, 0.414 )
 texture = ExtResource( 3 )
@@ -191,7 +195,6 @@ scale = Vector2( 0.823259, 0.344136 )
 normal = ExtResource( 4 )
 
 [node name="instructions2" type="Label" parent="option2"]
-self_modulate = Color( 1, 1, 1, 0 )
 margin_left = 166.0
 margin_top = -80.7181
 margin_right = 775.0
@@ -202,7 +205,7 @@ custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 text = "Instruções"
 
 [node name="option3" type="Sprite" parent="."]
-self_modulate = Color( 1, 1, 1, 0 )
+editor/display_folded = true
 position = Vector2( 351.712, -43.1662 )
 scale = Vector2( 0.414, 0.414 )
 texture = ExtResource( 3 )
@@ -214,7 +217,6 @@ scale = Vector2( 0.796521, 0.344136 )
 normal = ExtResource( 4 )
 
 [node name="credits2" type="Label" parent="option3"]
-self_modulate = Color( 1, 1, 1, 0 )
 margin_left = 206.555
 margin_top = -82.2674
 margin_right = 671.555
@@ -225,6 +227,7 @@ custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 text = "Créditos"
 
 [node name="goBack" type="TouchScreenButton" parent="."]
+editor/display_folded = true
 self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 391.122, 17.0418 )
 scale = Vector2( 0.199483, 0.165898 )
@@ -264,13 +267,11 @@ scale = Vector2( 0.12217, 0.12217 )
 texture = ExtResource( 8 )
 
 [node name="musicButton" type="TouchScreenButton" parent="."]
-self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 649.464, -467.708 )
 scale = Vector2( 0.308931, 0.308931 )
 normal = ExtResource( 9 )
 
 [node name="gameTitle" type="Label" parent="."]
-self_modulate = Color( 1, 1, 1, 0 )
 margin_left = 250.108
 margin_top = -413.701
 margin_right = 701.108
@@ -284,8 +285,24 @@ valign = 1
 autowrap = true
 clip_text = true
 
+[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -312.894, 74.8921 )
+scale = Vector2( 0.168, 0.089343 )
+normal = ExtResource( 4 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = -303.119
+margin_top = 69.9811
+margin_right = -135.119
+margin_bottom = 118.981
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Trocar jogo"
+
 [connection signal="pressed" from="option1/play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="option2/instructions" to="." method="_on_instructions_pressed"]
 [connection signal="pressed" from="option3/credits" to="." method="_on_creditos_pressed"]
 [connection signal="pressed" from="goBack" to="." method="_on_voltar_pressed"]
 [connection signal="pressed" from="musicButton" to="." method="_on_musicButton_pressed"]
+[connection signal="pressed" from="TouchScreenButton" to="." method="_on_TouchScreenButton_pressed"]

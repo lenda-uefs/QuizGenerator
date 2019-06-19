@@ -148,7 +148,7 @@ tracks/10/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=3]
 resource_name = "config_done2"
 length = 4.5
 tracks/0/type = "value"
@@ -284,8 +284,7 @@ tracks/10/keys = {
 "values": [ "Aguarde! Estamos carregando o jogo...", "Aguarde! Estamos carregando o jogo...", "Tudo pronto! Preparado?", "Vamos lá!" ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "configuration"
+[sub_resource type="Animation" id=4]
 length = 3.5
 loop = true
 tracks/0/type = "value"
@@ -337,7 +336,7 @@ tracks/3/keys = {
 "values": [ 0.0, 360.0 ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=5]
 resource_name = "configuration2"
 length = 3.5
 loop = true
@@ -390,7 +389,7 @@ tracks/3/keys = {
 "values": [ 0.0, 360.0 ]
 }
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=6]
 tracks/0/type = "value"
 tracks/0/path = NodePath("ColorRect:self_modulate")
 tracks/0/interp = 1
@@ -416,7 +415,7 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=7]
 length = 1.2
 tracks/0/type = "value"
 tracks/0/path = NodePath("label1:self_modulate")
@@ -599,7 +598,7 @@ tracks/14/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=8]
 size = 50
 outline_size = 1
 font_data = ExtResource( 3 )
@@ -734,12 +733,12 @@ texture = ExtResource( 4 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/config_done = SubResource( 2 )
-anims/config_done2 = SubResource( 7 )
-anims/configuration = SubResource( 3 )
-anims/configuration2 = SubResource( 8 )
+anims/config_done2 = SubResource( 3 )
+anims/configuration = SubResource( 4 )
+anims/configuration2 = SubResource( 5 )
 anims/logoAnimation = ExtResource( 5 )
-anims/logo_leaving = SubResource( 4 )
-anims/opening = SubResource( 5 )
+anims/logo_leaving = SubResource( 6 )
+anims/opening = SubResource( 7 )
 
 [node name="Popup" type="Popup" parent="."]
 margin_left = -309.0
@@ -759,7 +758,7 @@ margin_left = 113.0
 margin_top = 61.0
 margin_right = 952.0
 margin_bottom = 528.0
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 8 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 text = "Vamos lá!"
@@ -813,7 +812,7 @@ margin_left = 113.0
 margin_top = 61.0
 margin_right = 952.0
 margin_bottom = 528.0
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 8 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 text = "Aguarde! Estamos carregando o jogo..."

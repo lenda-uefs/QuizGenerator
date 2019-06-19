@@ -4,6 +4,7 @@ var storyChose_scene = load("res://screens/chooseStoryScene/storyChoose.tscn")
 var instruction_scene = load("res://screens/instructions/instructions.tscn")
 var musicOff = preload("res://sprites/images/soundOff.png")
 var musicOn = preload("res://sprites/images/soundOn.png")
+var config_screen = preload("res://screens/configurationScene/configScreen.tscn")
 
 
 func _ready():
@@ -71,3 +72,35 @@ func _on_musicButton_pressed():
 	else:
 		global_config.music_on()
 		$musicButton.set_texture(musicOn)
+
+
+func _on_TouchScreenButton_pressed():
+	delete_old_Files()
+	get_node("/root/Node2D/AnimationPlayer").play("transition", -1, 1.0, false)
+	yield(get_node("/root/Node2D/AnimationPlayer"), "animation_finished")
+	global_config.background_sound.stop()
+#warning-ignore:return_value_discarded
+	get_tree().change_scene_to(config_screen)
+
+func delete_old_Files():
+	var dir = Directory.new()
+	if dir.open("user://images") == OK:
+		dir.list_dir_begin()
+		var file_name = dir.get_next()
+		while (file_name != ""):
+			if(!dir.current_is_dir()):
+				print("Found file: " + file_name)
+				dir.remove(file_name)
+			file_name = dir.get_next()
+	if dir.open("user://") == OK:
+		dir.list_dir_begin()
+		var file_name = dir.get_next()
+		while (file_name != ""):
+			if(!dir.current_is_dir()):
+				print("Found file: " + file_name)
+				dir.remove(file_name)
+			file_name = dir.get_next()
+	else:
+		print("An error occurred when trying to access the path pra apagar.")
+	dir.open("user://config_files")
+	dir.remove("file.json")
