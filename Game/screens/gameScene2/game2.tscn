@@ -1,0 +1,536 @@
+[gd_scene load_steps=25 format=2]
+
+[ext_resource path="res://screens/gameScene2/game2.gd" type="Script" id=1]
+[ext_resource path="res://212 Queenie Sans.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://sprites/images/whiteBackground.png" type="Texture" id=3]
+[ext_resource path="res://sprites/images/pause2.png" type="Texture" id=4]
+[ext_resource path="res://screens/popUps/pause.tscn" type="PackedScene" id=5]
+[ext_resource path="res://screens/popUps/wrongAnswerPopUp.tscn" type="PackedScene" id=6]
+[ext_resource path="res://screens/musicPlayer.gd" type="Script" id=7]
+[ext_resource path="res://screens/animations/zoomClick2.tres" type="Animation" id=8]
+[ext_resource path="res://sprites/images/innerCircle.png" type="Texture" id=9]
+[ext_resource path="res://sprites/images/click.png" type="Texture" id=10]
+[ext_resource path="res://sprites/images/outerCircle.png" type="Texture" id=11]
+[ext_resource path="res://KGSecondChancesSketch.ttf" type="DynamicFontData" id=12]
+[ext_resource path="res://sprites/images/new/Ativo 74.png" type="Texture" id=13]
+
+[sub_resource type="DynamicFont" id=1]
+size = 40
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 30
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 30
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 35
+outline_size = 1
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 40
+outline_size = 1
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 60
+outline_size = 1
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 30
+outline_size = 1
+font_data = ExtResource( 2 )
+
+[sub_resource type="Animation" id=6]
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect2:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -311, 121.758 ), Vector2( -311, 30 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ColorRect2:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("ColorRect2/Label:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 155.084, 11.6313 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("ColorRect2/Label:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.9 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect2:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -311, -570.951 ), Vector2( -311, -479.193 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ColorRect2/Label:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 155.084, 11.6313 ), Vector2( 155.084, 11.6313 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("ColorRect2/Label:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("ColorRect2:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "wrong"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="DynamicFont" id=8]
+size = 24
+font_data = ExtResource( 12 )
+
+[node name="Node2D" type="Node2D"]
+position = Vector2( 311.46, 479.467 )
+script = ExtResource( 1 )
+
+[node name="BlueBackground" type="ColorRect" parent="."]
+margin_left = -312.0
+margin_top = -480.0
+margin_right = 713.0
+margin_bottom = 121.0
+color = Color( 0.611765, 0.862745, 0.972549, 0.905882 )
+
+[node name="question" type="Label" parent="."]
+margin_left = -292.0
+margin_top = -466.0
+margin_right = 626.0
+margin_bottom = -390.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Questão 1"
+autowrap = true
+clip_text = true
+
+[node name="alternativa1" type="Label" parent="."]
+margin_left = -285.0
+margin_top = -324.534
+margin_right = 680.0
+margin_bottom = -133.534
+custom_fonts/font = SubResource( 9 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "a)"
+autowrap = true
+clip_text = true
+
+[node name="alternativa1Button" type="TouchScreenButton" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -288.421, -331.587 )
+scale = Vector2( 0.95477, 0.203344 )
+normal = ExtResource( 3 )
+
+[node name="alternativa2" type="Label" parent="."]
+margin_left = -281.0
+margin_top = -108.128
+margin_right = 682.0
+margin_bottom = 103.872
+custom_fonts/font = SubResource( 10 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "b)"
+autowrap = true
+clip_text = true
+
+[node name="alternativa2Button" type="TouchScreenButton" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -295.789, -126.497 )
+scale = Vector2( 0.96505, 0.205956 )
+normal = ExtResource( 3 )
+
+[node name="pause" type="TouchScreenButton" parent="."]
+position = Vector2( 641.001, -466.567 )
+scale = Vector2( 0.375921, 0.375921 )
+normal = ExtResource( 4 )
+
+[node name="pauseScreen" parent="." instance=ExtResource( 5 )]
+visible = false
+position = Vector2( -0.008, -0.084 )
+
+[node name="wrongAnswer" parent="." instance=ExtResource( 6 )]
+visible = false
+position = Vector2( 0.931427, 0.516083 )
+
+[node name="Popup1" type="Popup" parent="."]
+editor/display_folded = true
+margin_left = -312.0
+margin_top = -480.0
+margin_right = 713.0
+margin_bottom = 120.0
+
+[node name="blackEffect" type="ColorRect" parent="Popup1"]
+self_modulate = Color( 0, 0, 0, 0.901961 )
+margin_right = 1026.0
+margin_bottom = 601.0
+color = Color( 0, 0, 0, 0.901961 )
+
+[node name="title" type="Label" parent="Popup1"]
+margin_left = 416.823
+margin_top = 202.499
+margin_right = 591.823
+margin_bottom = 238.499
+custom_fonts/font = SubResource( 2 )
+text = "Os 3 porquinhos"
+
+[node name="colorRect1" type="ColorRect" parent="Popup1"]
+margin_left = 191.809
+margin_top = 291.2
+margin_right = 192.809
+margin_bottom = 381.2
+color = Color( 1, 1, 1, 0.901961 )
+
+[node name="colorRect2" type="ColorRect" parent="Popup1"]
+margin_left = 191.809
+margin_top = 206.2
+margin_right = 192.809
+margin_bottom = 296.2
+color = Color( 1, 1, 1, 0.901961 )
+
+[node name="colorRect3" type="ColorRect" parent="Popup1"]
+margin_left = 829.448
+margin_top = 290.343
+margin_right = 830.448
+margin_bottom = 380.343
+color = Color( 1, 1, 1, 0.901961 )
+
+[node name="colorRect4" type="ColorRect" parent="Popup1"]
+margin_left = 829.448
+margin_top = 206.343
+margin_right = 830.448
+margin_bottom = 296.343
+color = Color( 1, 1, 1, 0.901961 )
+
+[node name="colorRect6" type="ColorRect" parent="Popup1"]
+margin_left = 191.791
+margin_top = 379.589
+margin_right = 829.791
+margin_bottom = 380.589
+color = Color( 1, 1, 1, 0.901961 )
+
+[node name="colorRect7" type="ColorRect" parent="Popup1"]
+margin_left = 191.791
+margin_top = 233.589
+margin_right = 829.791
+margin_bottom = 234.589
+color = Color( 1, 1, 1, 0.901961 )
+
+[node name="colorRect8" type="ColorRect" parent="Popup1"]
+margin_left = 191.791
+margin_top = 205.589
+margin_right = 829.791
+margin_bottom = 206.589
+color = Color( 1, 1, 1, 0.901961 )
+
+[node name="ColorRectRed2" type="ColorRect" parent="Popup1"]
+margin_left = 198.573
+margin_top = 281.281
+margin_right = 351.573
+margin_bottom = 317.281
+color = Color( 0.823529, 0.368627, 0.317647, 1 )
+
+[node name="ColorRect" type="ColorRect" parent="Popup1"]
+margin_left = 351.187
+margin_top = 280.567
+margin_right = 715.187
+margin_bottom = 316.567
+
+[node name="ColorRectRed" type="ColorRect" parent="Popup1"]
+margin_left = 715.432
+margin_top = 281.424
+margin_right = 823.432
+margin_bottom = 317.424
+color = Color( 0.823529, 0.368627, 0.317647, 1 )
+
+[node name="keepPlayingText" type="Label" parent="Popup1"]
+margin_left = 384.54
+margin_top = 329.533
+margin_right = 613.54
+margin_bottom = 412.533
+custom_fonts/font = SubResource( 3 )
+text = "Continuar jogando
+"
+align = 1
+valign = 1
+
+[node name="history" type="AudioStreamPlayer" parent="Popup1"]
+editor/display_folded = true
+script = ExtResource( 7 )
+
+[node name="goBack" type="TouchScreenButton" parent="Popup1/history"]
+position = Vector2( 201.524, 288.207 )
+scale = Vector2( 0.96, 0.96 )
+
+[node name="play" type="TouchScreenButton" parent="Popup1/history"]
+position = Vector2( 263.039, 285.905 )
+scale = Vector2( 0.96, 0.96 )
+
+[node name="goForward" type="TouchScreenButton" parent="Popup1/history"]
+position = Vector2( 302.546, 288.03 )
+scale = Vector2( 0.96, 0.96 )
+
+[node name="timePassing" type="Label" parent="Popup1/history"]
+visible = false
+margin_left = 727.684
+margin_top = 271.061
+margin_right = 815.684
+margin_bottom = 331.061
+custom_fonts/font = SubResource( 4 )
+text = "00:00"
+valign = 1
+
+[node name="playerExibition" type="ColorRect" parent="Popup1/history"]
+visible = false
+margin_left = 358.803
+margin_top = 289.685
+margin_right = 364.803
+margin_bottom = 306.685
+color = Color( 0.823529, 0.368627, 0.317647, 1 )
+
+[node name="Timer" type="Timer" parent="Popup1/history"]
+
+[node name="keepPlaying" type="TouchScreenButton" parent="Popup1/history"]
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 368.196, 329.115 )
+scale = Vector2( 0.240497, 0.0818722 )
+normal = ExtResource( 3 )
+
+[node name="Popup2" type="Popup" parent="."]
+editor/display_folded = true
+margin_left = -312.0
+margin_top = -480.0
+margin_right = 713.0
+margin_bottom = 120.0
+
+[node name="blackEffect" type="ColorRect" parent="Popup2"]
+self_modulate = Color( 0, 0, 0, 0.901961 )
+margin_right = 1026.0
+margin_bottom = 601.0
+color = Color( 0, 0, 0, 0.901961 )
+
+[node name="title" type="Label" parent="Popup2"]
+margin_left = 428.645
+margin_top = 84.0715
+margin_right = 603.645
+margin_bottom = 120.072
+custom_fonts/font = SubResource( 2 )
+text = "Os 3 porquinhos"
+
+[node name="colorRect1" type="ColorRect" parent="Popup2"]
+margin_left = 190.581
+margin_top = 170.882
+margin_right = 191.581
+margin_bottom = 503.882
+color = Color( 1, 1, 1, 0.901961 )
+
+[node name="colorRect2" type="ColorRect" parent="Popup2"]
+margin_left = 190.581
+margin_top = 85.8817
+margin_right = 191.581
+margin_bottom = 175.882
+color = Color( 1, 1, 1, 0.901961 )
+
+[node name="colorRect3" type="ColorRect" parent="Popup2"]
+margin_left = 828.22
+margin_top = 170.025
+margin_right = 829.22
+margin_bottom = 505.025
+color = Color( 1, 1, 1, 0.901961 )
+
+[node name="colorRect4" type="ColorRect" parent="Popup2"]
+margin_left = 828.22
+margin_top = 86.0247
+margin_right = 829.22
+margin_bottom = 176.025
+color = Color( 1, 1, 1, 0.901961 )
+
+[node name="colorRect6" type="ColorRect" parent="Popup2"]
+margin_left = 190.563
+margin_top = 504.138
+margin_right = 828.563
+margin_bottom = 505.138
+color = Color( 1, 1, 1, 0.901961 )
+
+[node name="colorRect7" type="ColorRect" parent="Popup2"]
+margin_left = 190.563
+margin_top = 113.271
+margin_right = 828.563
+margin_bottom = 114.271
+color = Color( 1, 1, 1, 0.901961 )
+
+[node name="colorRect8" type="ColorRect" parent="Popup2"]
+margin_left = 190.563
+margin_top = 85.2707
+margin_right = 828.563
+margin_bottom = 86.2707
+color = Color( 1, 1, 1, 0.901961 )
+
+[node name="keepPlayingText" type="Label" parent="Popup2"]
+margin_left = 407.416
+margin_top = 454.26
+margin_right = 609.416
+margin_bottom = 490.26
+custom_fonts/font = SubResource( 2 )
+text = "Continuar jogando"
+
+[node name="text" type="RichTextLabel" parent="Popup2"]
+margin_left = 204.0
+margin_top = 123.0
+margin_right = 820.0
+margin_bottom = 443.0
+custom_fonts/normal_font = SubResource( 5 )
+custom_colors/default_color = Color( 1, 1, 1, 1 )
+text = "Oieee testando"
+
+[node name="keepPlaying" type="TouchScreenButton" parent="Popup2"]
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 396.384, 452.239 )
+scale = Vector2( 0.2002, 0.0826028 )
+normal = ExtResource( 3 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/tip = SubResource( 6 )
+anims/tip2 = SubResource( 7 )
+anims/wrong = SubResource( 11 )
+anims/zoomClick2 = ExtResource( 8 )
+
+[node name="innerClick" type="Sprite" parent="."]
+visible = false
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -190.054, -339.532 )
+scale = Vector2( 0.225, 0.225 )
+texture = ExtResource( 9 )
+
+[node name="click" type="Sprite" parent="."]
+visible = false
+position = Vector2( -105.211, -249.969 )
+scale = Vector2( 0.342102, 0.342102 )
+texture = ExtResource( 10 )
+
+[node name="outerClick" type="Sprite" parent="."]
+visible = false
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -189.566, -339.044 )
+scale = Vector2( 0.225, 0.225 )
+texture = ExtResource( 11 )
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+editor/display_folded = true
+visible = false
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = -311.0
+margin_top = 121.758
+margin_right = 712.0
+margin_bottom = 212.758
+
+[node name="Label" type="Label" parent="ColorRect2"]
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = 155.084
+margin_top = 11.6313
+margin_right = 919.084
+margin_bottom = 78.6313
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Para dar zoom, dê um clique na polaroid. Vamos lá, tente!"
+align = 1
+
+[node name="Sprite" type="Sprite" parent="."]
+self_modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 209.943, -162.062 )
+scale = Vector2( 0.386798, 0.316859 )
+texture = ExtResource( 13 )
+
+[connection signal="pressed" from="alternativa1Button" to="." method="_on_alternativa1Button_pressed"]
+[connection signal="pressed" from="alternativa2Button" to="." method="_on_alternativa2Button_pressed"]
+[connection signal="pressed" from="pause" to="." method="_on_pause_pressed"]
+[connection signal="pressed" from="Popup1/history/goBack" to="Popup1/history" method="_on_goBack_pressed"]
+[connection signal="pressed" from="Popup1/history/play" to="Popup1/history" method="_on_play_pressed"]
+[connection signal="pressed" from="Popup1/history/goForward" to="Popup1/history" method="_on_goForward_pressed"]
+[connection signal="pressed" from="Popup1/history/keepPlaying" to="Popup1/history" method="_on_keepPlaying_pressed"]
+[connection signal="pressed" from="Popup2/keepPlaying" to="." method="_on_keepPlaying_pressed"]

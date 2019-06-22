@@ -1,6 +1,7 @@
 extends Node2D
 
 var next_scene = preload("res://screens/gameScene/game.tscn")
+var next_scene2 = preload("res://screens/gameScene2/game2.tscn")
 var previous_scene = load("res://screens/chooseStoryScene/storyChoose.tscn")
 
 var musicOff = preload("res://sprites/images/soundOff.png")
@@ -29,8 +30,12 @@ func _on_iniciarJogo_pressed():
 		if(global_config.music==true):
 			if(global_config.background_sound.is_playing() == false):
 				global_config.music_on()
-		#warning-ignore:return_value_discarded
-		get_tree().change_scene_to(next_scene)
+		if(global_config.img == false):
+			#warning-ignore:return_value_discarded
+			get_tree().change_scene_to(next_scene2)
+		else:
+			#warning-ignore:return_value_discarded
+			get_tree().change_scene_to(next_scene)
 	else:
 		$Popup.popup()
 		$Popup/ok.set_block_signals(false)

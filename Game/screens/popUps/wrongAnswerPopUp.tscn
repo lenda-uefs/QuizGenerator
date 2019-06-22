@@ -1,9 +1,9 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://screens/popUps/wrongAnswerPopUp.gd" type="Script" id=1]
 [ext_resource path="res://sprites/images/button.png" type="Texture" id=2]
 [ext_resource path="res://sprites/images/whiteBackground.png" type="Texture" id=3]
-[ext_resource path="res://sprites/texts/WrongAnswer.png" type="Texture" id=4]
+[ext_resource path="res://212 Queenie Sans.ttf" type="DynamicFontData" id=4]
 
 [sub_resource type="Animation" id=1]
 resource_name = "openUp"
@@ -91,18 +91,6 @@ tracks/6/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
-tracks/7/type = "value"
-tracks/7/path = NodePath("Sprite:self_modulate")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
-}
 
 [sub_resource type="ArrayMesh" id=2]
 surfaces/0 = {
@@ -116,6 +104,17 @@ surfaces/0 = {
 "skeleton_aabb": [  ],
 "vertex_count": 95
 }
+
+[sub_resource type="DynamicFont" id=3]
+size = 60
+outline_size = 1
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 50
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 4 )
 
 [node name="Node2D" type="Node2D"]
 position = Vector2( 311.46, 479.467 )
@@ -168,10 +167,39 @@ scale = Vector2( 0.330547, 0.132456 )
 mesh = SubResource( 2 )
 texture = ExtResource( 3 )
 
-[node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 227.424, -203.502 )
-scale = Vector2( 0.254305, 0.254305 )
-texture = ExtResource( 4 )
+[node name="Label" type="Label" parent="."]
+margin_left = -123.0
+margin_top = -345.0
+margin_right = 578.0
+margin_bottom = -202.0
+custom_fonts/font = SubResource( 3 )
+text = "Tem certeza? Que tal ler a história novamente?"
+align = 3
+valign = 1
+autowrap = true
+clip_text = true
+
+[node name="Label2" type="Label" parent="."]
+margin_left = -124.0
+margin_top = -178.0
+margin_right = 196.0
+margin_bottom = -127.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Ler novamente"
+align = 1
+valign = 1
+
+[node name="Label3" type="Label" parent="."]
+margin_left = 239.0
+margin_top = -178.0
+margin_right = 578.0
+margin_bottom = -127.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Continuar jogando"
+align = 1
+valign = 1
 
 [connection signal="pressed" from="opt1/ouvirAgain" to="." method="_on_ouvirAgain_pressed"]
 [connection signal="pressed" from="opt2/keepPlaying" to="." method="_on_keepPlaying_pressed"]

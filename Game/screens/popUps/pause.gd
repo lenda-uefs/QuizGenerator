@@ -11,9 +11,9 @@ func _ready():
 	get_tree().set_auto_accept_quit(false)
 	get_tree().set_quit_on_go_back(false)
 	if(global_config.music == true):
-		$musicButton/Sprite.set_texture(musicOn)
+		$musicButton2/Sprite.set_texture(musicOn)
 	else:
-		$musicButton/Sprite.set_texture(musicOff)
+		$musicButton2/Sprite.set_texture(musicOff)
 
 
 func _on_jogarNovamente_pressed():

@@ -6,6 +6,14 @@ extends Node2D
 #[0, 6.133333, 10.362667, 23.440001, 30.154667, 40.469334, 43.674667, 50.762665, 56.015999, 66.842667, 76.767998, 89.984001]
 #]
 
+func _ready():
+	if(global_config.mode == 1):
+		$Label.set_text("Tem certeza? Que tal ouvir a história novamente?")
+		$Label2.set_text("Ouvir novamente")
+	else:
+		$Label.set_text("Tem certeza? Que tal ler a história novamente?")
+		$Label2.set_text("Ler novamente")
+
 var buttons = [preload("res://sprites/images/goBack.png"), preload("res://sprites/images/play.png"),
 preload("res://sprites/images/goForward.png")]
 

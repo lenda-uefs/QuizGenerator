@@ -10,6 +10,7 @@ var initiatingGame
 var background_sound = AudioStreamPlayer.new()
 var comeFrom_listenHistory
 var music = true
+var img = false
 
 #warning-ignore:unused_class_variable
 var mode #Caso seja 1, o jogo teve áudio. Caso seja 2, o jogo não teve

@@ -13,13 +13,13 @@
 [ext_resource path="res://212 Queenie Sans.ttf" type="DynamicFontData" id=11]
 [ext_resource path="res://sprites/images/soundOn.png" type="Texture" id=12]
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=1]
 size = 50
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 11 )
 
-[sub_resource type="Animation" id=1]
+[sub_resource type="Animation" id=2]
 tracks/0/type = "value"
 tracks/0/path = NodePath("baloon1:self_modulate")
 tracks/0/interp = 1
@@ -153,7 +153,7 @@ tracks/10/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("option1/jogarNovamente:position")
+tracks/11/path = NodePath("option2:rect_position")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/imported = false
@@ -162,10 +162,10 @@ tracks/11/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 60.6294, 7.65857 ), Vector2( 60.6294, 7.65857 ) ]
+"values": [ Vector2( 723.512, -194.284 ), Vector2( 296.258, -194.284 ) ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("option2:rect_position")
+tracks/12/path = NodePath("option2:self_modulate")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/imported = false
@@ -174,10 +174,10 @@ tracks/12/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 723.512, -194.284 ), Vector2( 296.258, -194.284 ) ]
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 tracks/13/type = "value"
-tracks/13/path = NodePath("option2:self_modulate")
+tracks/13/path = NodePath("option3:rect_position")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/imported = false
@@ -186,10 +186,10 @@ tracks/13/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+"values": [ Vector2( 721.466, -132 ), Vector2( 295.44, -132 ) ]
 }
 tracks/14/type = "value"
-tracks/14/path = NodePath("option2/menuInicial:position")
+tracks/14/path = NodePath("option3:self_modulate")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/imported = false
@@ -198,22 +198,22 @@ tracks/14/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 115.138, 7.44153 ), Vector2( 115.138, 7.44153 ) ]
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 tracks/15/type = "value"
-tracks/15/path = NodePath("option3:rect_position")
+tracks/15/path = NodePath("baloon1:position")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/imported = false
 tracks/15/enabled = true
 tracks/15/keys = {
-"times": PoolRealArray( 0, 1 ),
+"times": PoolRealArray( 0, 0.99839 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 721.466, -132 ), Vector2( 295.44, -132 ) ]
+"values": [ Vector2( -209.684, 317.891 ), Vector2( -209.684, -140.056 ) ]
 }
 tracks/16/type = "value"
-tracks/16/path = NodePath("option3:self_modulate")
+tracks/16/path = NodePath("musicButton:self_modulate")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/imported = false
@@ -225,7 +225,7 @@ tracks/16/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 tracks/17/type = "value"
-tracks/17/path = NodePath("option3/sair:position")
+tracks/17/path = NodePath("option1/jogarNovamente:position")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/imported = false
@@ -234,10 +234,10 @@ tracks/17/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 171.04, 9.50818 ), Vector2( 171.04, 9.50818 ) ]
+"values": [ Vector2( -0.82428, 0.675293 ), Vector2( -0.82428, 0.675293 ) ]
 }
 tracks/18/type = "value"
-tracks/18/path = NodePath("option3/sair:self_modulate")
+tracks/18/path = NodePath("option2/menuInicial:position")
 tracks/18/interp = 1
 tracks/18/loop_wrap = true
 tracks/18/imported = false
@@ -246,22 +246,22 @@ tracks/18/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+"values": [ Vector2( 0.292603, 0.925537 ), Vector2( 0.292603, 0.925537 ) ]
 }
 tracks/19/type = "value"
-tracks/19/path = NodePath("baloon1:position")
+tracks/19/path = NodePath("option3/sair:position")
 tracks/19/interp = 1
 tracks/19/loop_wrap = true
 tracks/19/imported = false
 tracks/19/enabled = true
 tracks/19/keys = {
-"times": PoolRealArray( 0, 0.99839 ),
+"times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -209.684, 317.891 ), Vector2( -209.684, -140.056 ) ]
+"values": [ Vector2( 1.62256, 0.548828 ), Vector2( 1.62256, 0.548828 ) ]
 }
 tracks/20/type = "value"
-tracks/20/path = NodePath("musicButton:self_modulate")
+tracks/20/path = NodePath("congrats:self_modulate")
 tracks/20/interp = 1
 tracks/20/loop_wrap = true
 tracks/20/imported = false
@@ -272,8 +272,56 @@ tracks/20/keys = {
 "update": 0,
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
+tracks/21/type = "value"
+tracks/21/path = NodePath("youwin:self_modulate")
+tracks/21/interp = 1
+tracks/21/loop_wrap = true
+tracks/21/imported = false
+tracks/21/enabled = true
+tracks/21/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/22/type = "value"
+tracks/22/path = NodePath("option1/playAgain:self_modulate")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/23/type = "value"
+tracks/23/path = NodePath("option2/menuInicial2:self_modulate")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/24/type = "value"
+tracks/24/path = NodePath("option3/sair2:self_modulate")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=3]
 size = 90
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
@@ -331,6 +379,7 @@ scale = Vector2( 0.404878, 0.404878 )
 texture = ExtResource( 9 )
 
 [node name="option1" type="ColorRect" parent="."]
+editor/display_folded = true
 margin_left = 296.303
 margin_top = -256.377
 margin_right = 716.302
@@ -339,7 +388,7 @@ color = Color( 1, 1, 1, 0.478431 )
 
 [node name="jogarNovamente" type="TouchScreenButton" parent="option1"]
 self_modulate = Color( 1, 1, 1, 0 )
-position = Vector2( -17.3094, -5.77444 )
+position = Vector2( -0.82428, 0.675293 )
 scale = Vector2( 0.4098, 0.151706 )
 normal = ExtResource( 10 )
 
@@ -348,11 +397,12 @@ margin_left = 78.3522
 margin_top = 4.86322
 margin_right = 346.352
 margin_bottom = 55.8632
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Jogar novamente"
 
 [node name="option2" type="ColorRect" parent="."]
+editor/display_folded = true
 margin_left = 296.258
 margin_top = -194.284
 margin_right = 716.256
@@ -361,7 +411,7 @@ color = Color( 1, 1, 1, 0 )
 
 [node name="menuInicial" type="TouchScreenButton" parent="option2"]
 self_modulate = Color( 1, 1, 1, 0 )
-position = Vector2( -17.2502, -5.52709 )
+position = Vector2( 0.292603, 0.925537 )
 scale = Vector2( 0.409425, 0.148636 )
 normal = ExtResource( 10 )
 
@@ -370,7 +420,7 @@ margin_left = 73.534
 margin_top = 5.452
 margin_right = 341.534
 margin_bottom = 56.452
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Menu inicial"
 align = 1
@@ -385,7 +435,7 @@ color = Color( 1, 1, 1, 0.478431 )
 
 [node name="sair" type="TouchScreenButton" parent="option3"]
 self_modulate = Color( 1, 1, 1, 0 )
-position = Vector2( -17.1503, -5.79381 )
+position = Vector2( 1.62256, 0.548828 )
 scale = Vector2( 0.410044, 0.134353 )
 normal = ExtResource( 10 )
 
@@ -394,14 +444,14 @@ margin_left = 168.94
 margin_top = 1.21783
 margin_right = 233.94
 margin_bottom = 52.2178
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Sair"
 align = 1
 valign = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/transition_winscene = SubResource( 1 )
+anims/transition_winscene = SubResource( 2 )
 
 [node name="musicButton" type="TouchScreenButton" parent="."]
 position = Vector2( 658.069, -503.374 )
@@ -413,7 +463,7 @@ margin_left = -138.504
 margin_top = -138.504
 margin_right = 152.496
 margin_bottom = -38.5042
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Parabéns"
 
@@ -422,7 +472,7 @@ margin_left = -169.529
 margin_top = -69.8061
 margin_right = 166.471
 margin_bottom = 30.1939
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Você venceu!"
 

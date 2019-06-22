@@ -1,30 +1,33 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://screens/popUps/pause.gd" type="Script" id=1]
 [ext_resource path="res://sprites/images/close.png" type="Texture" id=2]
 [ext_resource path="res://sprites/images/whiteBackground.png" type="Texture" id=3]
-[ext_resource path="res://sprites/texts/MenuInicial.png" type="Texture" id=4]
-[ext_resource path="res://sprites/texts/Reiniciar.png" type="Texture" id=5]
-[ext_resource path="res://sprites/images/soundOn.png" type="Texture" id=6]
-[ext_resource path="res://sprites/texts/Sair.png" type="Texture" id=7]
+[ext_resource path="res://212 Queenie Sans.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://sprites/images/soundOn.png" type="Texture" id=5]
 
-[sub_resource type="Animation" id=1]
-resource_name = "Pausemenu"
+[sub_resource type="DynamicFont" id=3]
+size = 65
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 4 )
+
+[sub_resource type="Animation" id=2]
 length = 1.5
 tracks/0/type = "value"
-tracks/0/path = NodePath("menuInicialButton:rect_position")
+tracks/0/path = NodePath("MenuInicial:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1.5 ),
+"times": PoolRealArray( 0, 1.4 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -29.9286, -318.33 ), Vector2( -606.323, -318.33 ) ]
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("menuInicialButton:self_modulate")
+tracks/1/path = NodePath("Reiniciar:self_modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -36,19 +39,19 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("menuInicialButton/Sprite:position")
+tracks/2/path = NodePath("musicButton2:self_modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 1.5 ),
+"times": PoolRealArray( 0, 1.4 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 225.824, 31.2888 ), Vector2( 225.824, 31.2888 ) ]
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 tracks/3/type = "value"
-tracks/3/path = NodePath("menuInicialButton/Sprite:self_modulate")
+tracks/3/path = NodePath("ColorRect:self_modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/imported = false
@@ -60,7 +63,7 @@ tracks/3/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 tracks/4/type = "value"
-tracks/4/path = NodePath("menuInicialButton/MenuInicial:position")
+tracks/4/path = NodePath("close:self_modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/imported = false
@@ -69,22 +72,22 @@ tracks/4/keys = {
 "times": PoolRealArray( 0, 1.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -17.3452, -6.12177 ), Vector2( -17.3452, -6.12177 ) ]
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 tracks/5/type = "value"
-tracks/5/path = NodePath("menuInicialButton/MenuInicial:self_modulate")
+tracks/5/path = NodePath("sair:self_modulate")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 0, 1.4 ),
+"times": PoolRealArray( 0, 1.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 tracks/6/type = "value"
-tracks/6/path = NodePath("reiniciarButton:rect_position")
+tracks/6/path = NodePath("menuInicialLabel3:self_modulate")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/imported = false
@@ -93,22 +96,22 @@ tracks/6/keys = {
 "times": PoolRealArray( 0, 1.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -29.9286, -233.986 ), Vector2( 475.386, -233.986 ) ]
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 tracks/7/type = "value"
-tracks/7/path = NodePath("reiniciarButton:self_modulate")
+tracks/7/path = NodePath("reiniciarLabel2:self_modulate")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/imported = false
 tracks/7/enabled = true
 tracks/7/keys = {
-"times": PoolRealArray( 0, 1.4 ),
+"times": PoolRealArray( 0, 1.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 tracks/8/type = "value"
-tracks/8/path = NodePath("reiniciarButton/Sprite:position")
+tracks/8/path = NodePath("sairLabel:self_modulate")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/imported = false
@@ -117,22 +120,22 @@ tracks/8/keys = {
 "times": PoolRealArray( 0, 1.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 225.824, 31.2888 ), Vector2( 225.824, 31.2888 ) ]
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 tracks/9/type = "value"
-tracks/9/path = NodePath("reiniciarButton/Sprite:self_modulate")
+tracks/9/path = NodePath("musicButton2/Sprite:self_modulate")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/imported = false
 tracks/9/enabled = true
 tracks/9/keys = {
-"times": PoolRealArray( 0, 1.4 ),
+"times": PoolRealArray( 0, 1.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 tracks/10/type = "value"
-tracks/10/path = NodePath("reiniciarButton/Reiniciar:position")
+tracks/10/path = NodePath("MenuInicial:position")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/imported = false
@@ -141,22 +144,22 @@ tracks/10/keys = {
 "times": PoolRealArray( 0, 1.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -18.6369, -6.05383 ), Vector2( -18.6369, -6.05383 ) ]
+"values": [ Vector2( -26.5961, -328.329 ), Vector2( -767.116, -328.329 ) ]
 }
 tracks/11/type = "value"
-tracks/11/path = NodePath("reiniciarButton/Reiniciar:self_modulate")
+tracks/11/path = NodePath("menuInicialLabel3:rect_position")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/imported = false
 tracks/11/enabled = true
 tracks/11/keys = {
-"times": PoolRealArray( 0, 1.4 ),
+"times": PoolRealArray( 0, 1.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+"values": [ Vector2( 83.6777, -327.877 ), Vector2( -656.842, -327.877 ) ]
 }
 tracks/12/type = "value"
-tracks/12/path = NodePath("musicButton:rect_position")
+tracks/12/path = NodePath("Reiniciar:position")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/imported = false
@@ -165,22 +168,22 @@ tracks/12/keys = {
 "times": PoolRealArray( 0, 1.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -29.9286, -148.282 ), Vector2( -599.861, -148.282 ) ]
+"values": [ Vector2( -27.8878, -243.917 ), Vector2( 716.509, -243.917 ) ]
 }
 tracks/13/type = "value"
-tracks/13/path = NodePath("musicButton:self_modulate")
+tracks/13/path = NodePath("reiniciarLabel2:rect_position")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/imported = false
 tracks/13/enabled = true
 tracks/13/keys = {
-"times": PoolRealArray( 0, 1.4 ),
+"times": PoolRealArray( 0, 1.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+"values": [ Vector2( 114.678, -242.877 ), Vector2( 859.075, -242.877 ) ]
 }
 tracks/14/type = "value"
-tracks/14/path = NodePath("musicButton/Sprite:position")
+tracks/14/path = NodePath("musicButton2:position")
 tracks/14/interp = 1
 tracks/14/loop_wrap = true
 tracks/14/imported = false
@@ -189,22 +192,22 @@ tracks/14/keys = {
 "times": PoolRealArray( 0, 1.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 225.824, 31.2888 ), Vector2( 225.824, 31.2888 ) ]
+"values": [ Vector2( -26.9418, -157.495 ), Vector2( -766.169, -157.495 ) ]
 }
 tracks/15/type = "value"
-tracks/15/path = NodePath("musicButton/Sprite:self_modulate")
+tracks/15/path = NodePath("musicButton2/Sprite:position")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/imported = false
 tracks/15/enabled = true
 tracks/15/keys = {
-"times": PoolRealArray( 0, 1.4 ),
+"times": PoolRealArray( 0, 1.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+"values": [ Vector2( 525.215, 206.128 ), Vector2( 525.215, 206.128 ) ]
 }
 tracks/16/type = "value"
-tracks/16/path = NodePath("musicButton/musicButton:position")
+tracks/16/path = NodePath("sair:position")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/imported = false
@@ -213,103 +216,19 @@ tracks/16/keys = {
 "times": PoolRealArray( 0, 1.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( -17.6909, -5.33557 ), Vector2( -17.6909, -5.33557 ) ]
+"values": [ Vector2( -27.8766, -72.5405 ), Vector2( 716.52, -72.5405 ) ]
 }
 tracks/17/type = "value"
-tracks/17/path = NodePath("musicButton/musicButton:self_modulate")
+tracks/17/path = NodePath("sairLabel:rect_position")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/imported = false
 tracks/17/enabled = true
 tracks/17/keys = {
-"times": PoolRealArray( 0, 1.4 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
-}
-tracks/18/type = "value"
-tracks/18/path = NodePath("ColorRect:self_modulate")
-tracks/18/interp = 1
-tracks/18/loop_wrap = true
-tracks/18/imported = false
-tracks/18/enabled = true
-tracks/18/keys = {
-"times": PoolRealArray( 0, 1.4 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
-}
-tracks/19/type = "value"
-tracks/19/path = NodePath("close:self_modulate")
-tracks/19/interp = 1
-tracks/19/loop_wrap = true
-tracks/19/imported = false
-tracks/19/enabled = true
-tracks/19/keys = {
 "times": PoolRealArray( 0, 1.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
-}
-tracks/20/type = "value"
-tracks/20/path = NodePath("sairButton2:rect_position")
-tracks/20/interp = 1
-tracks/20/loop_wrap = true
-tracks/20/imported = false
-tracks/20/enabled = true
-tracks/20/keys = {
-"times": PoolRealArray( 0, 1.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( -29.9286, -59.467 ), Vector2( 435.323, -59.467 ) ]
-}
-tracks/21/type = "value"
-tracks/21/path = NodePath("sairButton2:self_modulate")
-tracks/21/interp = 1
-tracks/21/loop_wrap = true
-tracks/21/imported = false
-tracks/21/enabled = true
-tracks/21/keys = {
-"times": PoolRealArray( 0, 1.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
-}
-tracks/22/type = "value"
-tracks/22/path = NodePath("sairButton2/sair:position")
-tracks/22/interp = 1
-tracks/22/loop_wrap = true
-tracks/22/imported = false
-tracks/22/enabled = true
-tracks/22/keys = {
-"times": PoolRealArray( 0, 1.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( -18.5543, -6.66324 ), Vector2( -18.5543, -6.66324 ) ]
-}
-tracks/23/type = "value"
-tracks/23/path = NodePath("sairButton2/sair:self_modulate")
-tracks/23/interp = 1
-tracks/23/loop_wrap = true
-tracks/23/imported = false
-tracks/23/enabled = true
-tracks/23/keys = {
-"times": PoolRealArray( 0, 1.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
-}
-tracks/24/type = "value"
-tracks/24/path = NodePath("sairButton2/Sprite:self_modulate")
-tracks/24/interp = 1
-tracks/24/loop_wrap = true
-tracks/24/imported = false
-tracks/24/enabled = true
-tracks/24/keys = {
-"times": PoolRealArray( 0, 1.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+"values": [ Vector2( 154.678, -70.8771 ), Vector2( 899.075, -70.8771 ) ]
 }
 
 [node name="Node2D" type="Node2D"]
@@ -330,93 +249,71 @@ position = Vector2( 641.001, -466.567 )
 scale = Vector2( 0.376, 0.376 )
 normal = ExtResource( 2 )
 
-[node name="menuInicialButton" type="ColorRect" parent="."]
+[node name="MenuInicial" type="TouchScreenButton" parent="."]
 self_modulate = Color( 1, 1, 1, 0 )
-margin_left = -606.323
-margin_top = -318.33
-margin_right = -154.323
-margin_bottom = -256.33
-color = Color( 1, 1, 1, 0.478431 )
-
-[node name="MenuInicial" type="TouchScreenButton" parent="menuInicialButton"]
-self_modulate = Color( 1, 1, 1, 0 )
-position = Vector2( -17.3452, -6.12177 )
+position = Vector2( -767.116, -328.329 )
 scale = Vector2( 0.441399, 0.159452 )
 normal = ExtResource( 3 )
 
-[node name="Sprite" type="Sprite" parent="menuInicialButton"]
+[node name="menuInicialLabel3" type="Label" parent="."]
 self_modulate = Color( 1, 1, 1, 0 )
-position = Vector2( 225.824, 31.2888 )
-scale = Vector2( 0.248, 0.248 )
-texture = ExtResource( 4 )
+margin_left = -656.842
+margin_top = -327.877
+margin_right = -417.842
+margin_bottom = -261.877
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Menu Inicial"
 
-[node name="reiniciarButton" type="ColorRect" parent="."]
-editor/display_folded = true
+[node name="Reiniciar" type="TouchScreenButton" parent="."]
 self_modulate = Color( 1, 1, 1, 0 )
-margin_left = 475.386
-margin_top = -233.986
-margin_right = 927.387
-margin_bottom = -171.986
-color = Color( 1, 1, 1, 0.478431 )
-
-[node name="Reiniciar" type="TouchScreenButton" parent="reiniciarButton"]
-self_modulate = Color( 1, 1, 1, 0 )
-position = Vector2( -18.6369, -6.05383 )
+position = Vector2( 716.509, -243.917 )
 scale = Vector2( 0.442035, 0.154968 )
 normal = ExtResource( 3 )
 
-[node name="Sprite" type="Sprite" parent="reiniciarButton"]
+[node name="reiniciarLabel2" type="Label" parent="."]
 self_modulate = Color( 1, 1, 1, 0 )
-position = Vector2( 225.824, 31.2888 )
-scale = Vector2( 0.248, 0.248 )
-texture = ExtResource( 5 )
+margin_left = 859.075
+margin_top = -242.877
+margin_right = 1038.07
+margin_bottom = -176.877
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Reiniciar"
 
-[node name="musicButton" type="ColorRect" parent="."]
+[node name="musicButton2" type="TouchScreenButton" parent="."]
 self_modulate = Color( 1, 1, 1, 0 )
-margin_left = -599.861
-margin_top = -148.282
-margin_right = -147.861
-margin_bottom = -86.2818
-color = Color( 1, 1, 1, 0.478431 )
-
-[node name="musicButton" type="TouchScreenButton" parent="musicButton"]
-self_modulate = Color( 1, 1, 1, 0 )
-position = Vector2( -17.6909, -5.33557 )
+position = Vector2( -766.169, -157.495 )
 scale = Vector2( 0.4408, 0.153421 )
 normal = ExtResource( 3 )
 
-[node name="Sprite" type="Sprite" parent="musicButton"]
+[node name="Sprite" type="Sprite" parent="musicButton2"]
 self_modulate = Color( 1, 1, 1, 0 )
-position = Vector2( 225.824, 31.2888 )
-scale = Vector2( 0.309, 0.309 )
-texture = ExtResource( 6 )
+position = Vector2( 525.215, 206.128 )
+scale = Vector2( 0.700998, 2.01407 )
+texture = ExtResource( 5 )
 
-[node name="sairButton2" type="ColorRect" parent="."]
-editor/display_folded = true
+[node name="sair" type="TouchScreenButton" parent="."]
 self_modulate = Color( 1, 1, 1, 0 )
-margin_left = 435.323
-margin_top = -59.467
-margin_right = 887.321
-margin_bottom = 2.5332
-color = Color( 1, 1, 1, 0.478431 )
-
-[node name="sair" type="TouchScreenButton" parent="sairButton2"]
-self_modulate = Color( 1, 1, 1, 0 )
-position = Vector2( -18.5543, -6.66324 )
+position = Vector2( 716.52, -72.5405 )
 scale = Vector2( 0.441958, 0.154825 )
 normal = ExtResource( 3 )
 
-[node name="Sprite" type="Sprite" parent="sairButton2"]
+[node name="sairLabel" type="Label" parent="."]
 self_modulate = Color( 1, 1, 1, 0 )
-position = Vector2( 234.351, 29.7727 )
-scale = Vector2( 0.248, 0.248 )
-texture = ExtResource( 7 )
+margin_left = 899.075
+margin_top = -70.8771
+margin_right = 989.075
+margin_bottom = 0.122925
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Sair"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Pausemenu = SubResource( 1 )
+anims/Pausemenu = SubResource( 2 )
 
 [connection signal="pressed" from="close" to="." method="_on_close_pressed"]
-[connection signal="pressed" from="menuInicialButton/MenuInicial" to="." method="_on_menuInicial_pressed"]
-[connection signal="pressed" from="reiniciarButton/Reiniciar" to="." method="_on_jogarNovamente_pressed"]
-[connection signal="pressed" from="musicButton/musicButton" to="." method="_on_musicButton_pressed"]
-[connection signal="pressed" from="sairButton2/sair" to="." method="_on_sair_pressed"]
+[connection signal="pressed" from="MenuInicial" to="." method="_on_menuInicial_pressed"]
+[connection signal="pressed" from="Reiniciar" to="." method="_on_jogarNovamente_pressed"]
+[connection signal="pressed" from="musicButton2" to="." method="_on_musicButton_pressed"]
+[connection signal="pressed" from="sair" to="." method="_on_sair_pressed"]

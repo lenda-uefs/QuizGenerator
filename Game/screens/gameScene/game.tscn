@@ -1,11 +1,11 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://screens/gameScene/game.gd" type="Script" id=1]
 [ext_resource path="res://212 Queenie Sans.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://sprites/images/3Porquinhos/Parte1.jpg" type="Texture" id=3]
-[ext_resource path="res://sprites/images/button.png" type="Texture" id=4]
-[ext_resource path="res://sprites/images/pin.png" type="Texture" id=5]
-[ext_resource path="res://sprites/images/3Porquinhos/Parte14.jpg" type="Texture" id=6]
+[ext_resource path="res://sprites/images/new/polaroid.png" type="Texture" id=3]
+[ext_resource path="res://sprites/images/winScreen.png" type="Texture" id=4]
+[ext_resource path="res://sprites/images/button.png" type="Texture" id=5]
+[ext_resource path="res://sprites/images/pin.png" type="Texture" id=6]
 [ext_resource path="res://sprites/images/pause2.png" type="Texture" id=7]
 [ext_resource path="res://screens/animations/optionsAnimation.tscn" type="PackedScene" id=8]
 [ext_resource path="res://screens/popUps/pause.tscn" type="PackedScene" id=9]
@@ -23,6 +23,15 @@
 size = 40
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 30
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 30
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=2]
@@ -184,35 +193,55 @@ rotation = -0.349066
 scale = Vector2( 1.00446, 1.00446 )
 normal = ExtResource( 3 )
 
-[node name="polaroid1" type="NinePatchRect" parent="polaroid3"]
+[node name="polaroid1_1" type="NinePatchRect" parent="polaroid3"]
 margin_left = -157.0
 margin_top = 151.0
 margin_right = 1007.0
-margin_bottom = 1415.0
+margin_bottom = 1421.0
 rect_rotation = -10.0
 rect_scale = Vector2( 1.005, 1.005 )
 texture = ExtResource( 3 )
+
+[node name="polaroid1" type="NinePatchRect" parent="polaroid3"]
+margin_left = -90.0
+margin_top = 203.0
+margin_right = 960.0
+margin_bottom = 1201.0
+rect_rotation = -10.0
+rect_scale = Vector2( 1.005, 1.005 )
+texture = ExtResource( 4 )
 
 [node name="half1_1" type="TouchScreenButton" parent="polaroid3"]
 self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( -157.656, 151.56 )
 rotation = -0.174533
 scale = Vector2( 3.31684, 8.68926 )
-normal = ExtResource( 4 )
+normal = ExtResource( 5 )
 
 [node name="half1_2" type="TouchScreenButton" parent="polaroid3"]
 self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( -43.5246, 802.512 )
 rotation = -0.174533
 scale = Vector2( 3.31684, 8.12037 )
-normal = ExtResource( 4 )
+normal = ExtResource( 5 )
 passby_press = true
 
 [node name="pin" type="Sprite" parent="polaroid3"]
 position = Vector2( 400.623, 30.5321 )
 rotation = -0.174533
 scale = Vector2( 2.2487, 2.2487 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
+
+[node name="labelPolaroid1" type="Label" parent="."]
+margin_left = -219.0
+margin_top = -54.0
+margin_right = 93.0
+margin_bottom = 3.0
+custom_fonts/font = SubResource( 9 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "oieoieoie"
+autowrap = true
+clip_text = true
 
 [node name="polaroid3_2" type="TouchScreenButton" parent="."]
 editor/display_folded = true
@@ -227,34 +256,53 @@ rotation = -0.349066
 scale = Vector2( 1.00079, 1.00079 )
 normal = ExtResource( 3 )
 
-[node name="polaroid1" type="NinePatchRect" parent="polaroid3_2"]
+[node name="polaroid1_1" type="NinePatchRect" parent="polaroid3_2"]
 margin_left = -153.0
 margin_top = 154.0
 margin_right = 1012.0
 margin_bottom = 1410.0
 rect_rotation = -10.0
-texture = ExtResource( 6 )
+texture = ExtResource( 3 )
+
+[node name="polaroid1" type="NinePatchRect" parent="polaroid3_2"]
+margin_left = -87.4893
+margin_top = 210.966
+margin_right = 962.511
+margin_bottom = 1208.97
+rect_rotation = -10.0
+texture = ExtResource( 4 )
 
 [node name="pin" type="Sprite" parent="polaroid3_2"]
 position = Vector2( 415.447, 31.2224 )
 rotation = -0.174533
 scale = Vector2( 2.23758, 2.23758 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 
 [node name="half2_1" type="TouchScreenButton" parent="polaroid3_2"]
 self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( -153.478, 152.674 )
 rotation = -0.174533
 scale = Vector2( 3.30044, 8.79717 )
-normal = ExtResource( 4 )
+normal = ExtResource( 5 )
 
 [node name="half2_2" type="TouchScreenButton" parent="polaroid3_2"]
 self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( -41.0686, 798.881 )
 rotation = -0.174533
 scale = Vector2( 3.30044, 8.02487 )
-normal = ExtResource( 4 )
+normal = ExtResource( 5 )
 passby_press = true
+
+[node name="labelPolaroid2" type="Label" parent="."]
+margin_left = 287.853
+margin_top = -54.0
+margin_right = 599.853
+margin_bottom = 3.0
+custom_fonts/font = SubResource( 10 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "oieoieoie"
+autowrap = true
+clip_text = true
 
 [node name="pause" type="TouchScreenButton" parent="."]
 position = Vector2( 641.001, -466.567 )

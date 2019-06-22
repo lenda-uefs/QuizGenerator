@@ -49,12 +49,13 @@ func next():
 			global_config.played_once = 1
 			global_config.save_game()
 	else:
-		if(givenAnswer == 0):
+		if(givenAnswer == 1):
 			get_node("/root/Node2D/optionsAnimation/AnimationPlayer").play_backwards("answer_Option1", -1)
 			yield(get_node("/root/Node2D/optionsAnimation/AnimationPlayer"), "animation_finished")
 		else:
 			get_node("/root/Node2D/optionsAnimation/AnimationPlayer").play_backwards("answer_Option2", -1)
 			yield(get_node("/root/Node2D/optionsAnimation/AnimationPlayer"), "animation_finished")
+		$optionsAnimation.set_visible(false)
 		#sugerir que a história seja ouvida novamente
 		#Faz com que não seja possível clicar nos botões:
 		$polaroid3/half1_1.set_block_signals(true)
@@ -81,8 +82,12 @@ func next():
 func _set_options():
 	$question.set_text(global_config.stories["Story_" + str(global_config.storychosen)]["Questions"]["Question_" + str(global_config.level+1)]["question_text"])
 	global_config.best_fit_check(40, $question)
-	$polaroid3/polaroid1.set_texture(global_config.stories["Story_" + str(global_config.storychosen)]["Questions"]["Question_" + str(global_config.level+1)]["option_1"])
-	$polaroid3_2/polaroid1.set_texture(global_config.stories["Story_" + str(global_config.storychosen)]["Questions"]["Question_" + str(global_config.level+1)]["option_2"])
+	$polaroid3/polaroid1.set_texture(global_config.stories["Story_" + str(global_config.storychosen)]["Questions"]["Question_" + str(global_config.level+1)]["option_1"]["image"])
+	$labelPolaroid1.set_text(global_config.stories["Story_" + str(global_config.storychosen)]["Questions"]["Question_" + str(global_config.level+1)]["option_1"]["text"])
+	global_config.best_fit_check(30, $labelPolaroid1)
+	$polaroid3_2/polaroid1.set_texture(global_config.stories["Story_" + str(global_config.storychosen)]["Questions"]["Question_" + str(global_config.level+1)]["option_2"]["image"])
+	$labelPolaroid2.set_text(global_config.stories["Story_" + str(global_config.storychosen)]["Questions"]["Question_" + str(global_config.level+1)]["option_2"]["text"])	
+	global_config.best_fit_check(30, $labelPolaroid2)
 	correctAnswer = int(global_config.stories["Story_" + str(global_config.storychosen)]["Questions"]["Question_" + str(global_config.level+1)]["answer"])
 	print(global_config.stories["Story_" + str(global_config.storychosen)]["Questions"]["Question_" + str(global_config.level+1)]["answer"])
 
@@ -102,18 +107,21 @@ func _zoomScreenAnimation(var type):
 	$optionsAnimation/close.set_block_signals(false)
 	if(type == 0):
 		$optionsAnimation/TouchScreenButton.set_texture($polaroid3/polaroid1.get_texture())
+		$optionsAnimation/Label.set_text($labelPolaroid1.get_text())
+		global_config.best_fit_check(30, $optionsAnimation/Label)
 		$optionsAnimation.set_visible(true)
-		#$polaroid3/polaroid1.set_visible(false)
 		get_node("/root/Node2D/optionsAnimation/AnimationPlayer").play("zoom_in_Option1", -1, 1.0, false)
 		yield(get_node("/root/Node2D/optionsAnimation/AnimationPlayer"), "animation_finished")
 		global_config.zoomPic = 0
 	else:
 		$optionsAnimation/TouchScreenButton.set_texture($polaroid3_2/polaroid1.get_texture())
+		$optionsAnimation/Label.set_text($labelPolaroid2.get_text())
+		global_config.best_fit_check(30, $optionsAnimation/Label)
 		$optionsAnimation.set_visible(true)
-		#$polaroid3_2/polaroid1.set_visible(false)
 		get_node("/root/Node2D/optionsAnimation/AnimationPlayer").play("zoom_in_Option2", -1, 1.0, false)
 		yield(get_node("/root/Node2D/optionsAnimation/AnimationPlayer"), "animation_finished")
 		global_config.zoomPic = 1
+	global_config.best_fit_check(50, $optionsAnimation/Label)
 
 
 func _on_half1_1_pressed():
@@ -142,6 +150,8 @@ func _verifyButtonsOption0():
 	yield(get_tree().create_timer(0.2), "timeout")
 	if(button1_1 == 1 and button1_2 == 1):
 		$optionsAnimation/TouchScreenButton.set_texture($polaroid3/polaroid1.get_texture())
+		$optionsAnimation/Label.set_text($labelPolaroid1.get_text())
+		global_config.best_fit_check(30, $optionsAnimation/Label)
 		$optionsAnimation.set_visible(true)
 		#$polaroid3/polaroid1.set_visible(false)
 		get_node("/root/Node2D/optionsAnimation/AnimationPlayer").play("answer_Option1", -1, 1.0, false)
@@ -161,6 +171,8 @@ func _verifyButtonsOption1():
 	yield(get_tree().create_timer(0.2), "timeout")
 	if(button2_1 == 1 and button2_2 == 1):
 		$optionsAnimation/TouchScreenButton.set_texture($polaroid3_2/polaroid1.get_texture())
+		$optionsAnimation/Label.set_text($labelPolaroid2.get_text())
+		global_config.best_fit_check(30, $optionsAnimation/Label)
 		$optionsAnimation.set_visible(true)
 		#$polaroid3_2/polaroid1.set_visible(false)
 		get_node("/root/Node2D/optionsAnimation/AnimationPlayer").play("answer_Option2", -1, 1.0, false)
@@ -191,6 +203,7 @@ func _on_pause_pressed():
 		$ColorRect2.set_visible(false)
 	$pauseScreen/AnimationPlayer.play_backwards("Pausemenu", -1)
 	yield(get_node("/root/Node2D/pauseScreen/AnimationPlayer"), "animation_finished")
+
 
 func _on_keepPlaying_pressed():
 	$Popup2.set_visible(false)
