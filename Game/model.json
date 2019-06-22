@@ -17,14 +17,26 @@
 			"Questions":{
 				"Question_1":{
 					"question_text": "Put here the questions of your Quiz.",
-					"option_1": "Path to the image of the first answer option",
-					"option_2": "Path to the image of the second answer option",
+					"option_1":{
+						"image": "Path to the image of the first answer option",
+						"text": "Description of the first answer option"
+					},
+					"option_2":{
+						"image": "Path to the image of the second answer option",
+						"text": "Description of the second answer option"
+					},
 					"answer": "Number of the option that answer you question: 1 or 2"
 				},
 				"Question_2":{
 					"question_text": "You can put more questions by coping the Question_x block",
-					"option_1": "Path to the image of the first answer option",
-					"option_2": "Path to the image of the second answer option",
+					"option_1":{
+						"image": "Path to the image of the first answer option",
+						"text": "Description of the first answer option"
+					},
+					"option_2":{
+						"image": "Path to the image of the second answer option",
+						"text": "Description of the second answer option"
+					},
 					"answer": "1"
 				}
 			}
