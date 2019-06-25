@@ -20,36 +20,36 @@ outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=9]
+[sub_resource type="DynamicFont" id=2]
 size = 30
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=10]
+[sub_resource type="DynamicFont" id=3]
 size = 30
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=4]
 size = 35
 outline_size = 1
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=5]
 size = 40
 outline_size = 1
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=6]
 size = 60
 outline_size = 1
 font_data = ExtResource( 2 )
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=7]
 size = 30
 outline_size = 1
 font_data = ExtResource( 2 )
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=8]
 tracks/0/type = "value"
 tracks/0/path = NodePath("ColorRect2:rect_position")
 tracks/0/interp = 1
@@ -99,7 +99,7 @@ tracks/3/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=9]
 tracks/0/type = "value"
 tracks/0/path = NodePath("ColorRect2:rect_position")
 tracks/0/interp = 1
@@ -149,7 +149,7 @@ tracks/3/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=10]
 resource_name = "wrong"
 length = 2.0
 tracks/0/type = "value"
@@ -165,7 +165,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="DynamicFont" id=8]
+[sub_resource type="DynamicFont" id=11]
 size = 24
 font_data = ExtResource( 12 )
 
@@ -196,7 +196,7 @@ margin_left = -285.0
 margin_top = -324.534
 margin_right = 680.0
 margin_bottom = -133.534
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "a)"
 autowrap = true
@@ -213,7 +213,7 @@ margin_left = -281.0
 margin_top = -108.128
 margin_right = 682.0
 margin_bottom = 103.872
-custom_fonts/font = SubResource( 10 )
+custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "b)"
 autowrap = true
@@ -256,7 +256,7 @@ margin_left = 416.823
 margin_top = 202.499
 margin_right = 591.823
 margin_bottom = 238.499
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 4 )
 text = "Os 3 porquinhos"
 
 [node name="colorRect1" type="ColorRect" parent="Popup1"]
@@ -333,7 +333,7 @@ margin_left = 384.54
 margin_top = 329.533
 margin_right = 613.54
 margin_bottom = 412.533
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 5 )
 text = "Continuar jogando
 "
 align = 1
@@ -361,7 +361,7 @@ margin_left = 727.684
 margin_top = 271.061
 margin_right = 815.684
 margin_bottom = 331.061
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 6 )
 text = "00:00"
 valign = 1
 
@@ -399,7 +399,7 @@ margin_left = 428.645
 margin_top = 84.0715
 margin_right = 603.645
 margin_bottom = 120.072
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 4 )
 text = "Os 3 porquinhos"
 
 [node name="colorRect1" type="ColorRect" parent="Popup2"]
@@ -456,7 +456,7 @@ margin_left = 407.416
 margin_top = 454.26
 margin_right = 609.416
 margin_bottom = 490.26
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 4 )
 text = "Continuar jogando"
 
 [node name="text" type="RichTextLabel" parent="Popup2"]
@@ -464,7 +464,7 @@ margin_left = 204.0
 margin_top = 123.0
 margin_right = 820.0
 margin_bottom = 443.0
-custom_fonts/normal_font = SubResource( 5 )
+custom_fonts/normal_font = SubResource( 7 )
 custom_colors/default_color = Color( 1, 1, 1, 1 )
 text = "Oieee testando"
 
@@ -475,9 +475,9 @@ scale = Vector2( 0.2002, 0.0826028 )
 normal = ExtResource( 3 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/tip = SubResource( 6 )
-anims/tip2 = SubResource( 7 )
-anims/wrong = SubResource( 11 )
+anims/tip = SubResource( 8 )
+anims/tip2 = SubResource( 9 )
+anims/wrong = SubResource( 10 )
 anims/zoomClick2 = ExtResource( 8 )
 
 [node name="innerClick" type="Sprite" parent="."]
@@ -515,7 +515,7 @@ margin_left = 155.084
 margin_top = 11.6313
 margin_right = 919.084
 margin_bottom = 78.6313
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 11 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Para dar zoom, dê um clique na polaroid. Vamos lá, tente!"
 align = 1

@@ -23,6 +23,8 @@ func _ready():
 		$Popup2/title.set_text(global_config.stories["Story_" + str(global_config.storychosen)]["Story_title"])
 		global_config.best_fit_check(35, $Popup2/title)
 		$Popup2/text.set_text(global_config.stories["Story_" + str(global_config.storychosen)]["Story_text_description"])
+	if(global_config.storytelling == true):
+		global_config.level = 1
 	_set_options()
 	if(global_config.played_once == 0):
 		$ColorRect2.set_visible(true)
@@ -39,35 +41,43 @@ func _ready():
 
 
 func next():
-	if(givenAnswer == correctAnswer):
-		global_config.increment_level()
-		if(global_config.finish !=1):
-			_set_options()
+	if(global_config.storytelling == false):
+		if(givenAnswer == correctAnswer):
+			global_config.increment_level()
+			if(global_config.finish !=1):
+				_set_options()
+			else:
+			#warning-ignore:return_value_discarded
+				get_tree().change_scene_to(win_scene)
+				global_config.played_once = 1
+				global_config.save_game()
 		else:
-		#warning-ignore:return_value_discarded
-			get_tree().change_scene_to(win_scene)
-			global_config.played_once = 1
-			global_config.save_game()
+			if(givenAnswer == 1):
+				get_node("/root/Node2D/optionsAnimation/AnimationPlayer").play_backwards("answer_Option1", -1)
+				yield(get_node("/root/Node2D/optionsAnimation/AnimationPlayer"), "animation_finished")
+			else:
+				get_node("/root/Node2D/optionsAnimation/AnimationPlayer").play_backwards("answer_Option2", -1)
+				yield(get_node("/root/Node2D/optionsAnimation/AnimationPlayer"), "animation_finished")
+			$optionsAnimation.set_visible(false)
+			#sugerir que a história seja ouvida novamente
+			#Faz com que não seja possível clicar nos botões:
+			$polaroid3/half1_1.set_block_signals(true)
+			$polaroid3/half1_2.set_block_signals(true)
+			$polaroid3_2/half2_1.set_block_signals(true)
+			$polaroid3_2/half2_2.set_block_signals(true)
+			$pause.set_block_signals(true)
+			$wrongAnswer.set_visible(true)
+			if(global_config.mode != 3):
+				$wrongAnswer/opt1/ouvirAgain.set_block_signals(false)
+			else:
+				$wrongAnswer/opt1/ouvirAgain.set_block_signals(true)
+				$wrongAnswer/opt1/ouvirAgain.set_visible(false)
+				$wrongAnswer/Label2.set_visible(false)
+			$wrongAnswer/opt2/keepPlaying.set_block_signals(false)
+			get_node("/root/Node2D/wrongAnswer/AnimationPlayer").play("openUp", -1, 1.0, false)
+			yield(get_node("/root/Node2D/wrongAnswer/AnimationPlayer"), "animation_finished")
 	else:
-		if(givenAnswer == 1):
-			get_node("/root/Node2D/optionsAnimation/AnimationPlayer").play_backwards("answer_Option1", -1)
-			yield(get_node("/root/Node2D/optionsAnimation/AnimationPlayer"), "animation_finished")
-		else:
-			get_node("/root/Node2D/optionsAnimation/AnimationPlayer").play_backwards("answer_Option2", -1)
-			yield(get_node("/root/Node2D/optionsAnimation/AnimationPlayer"), "animation_finished")
-		$optionsAnimation.set_visible(false)
-		#sugerir que a história seja ouvida novamente
-		#Faz com que não seja possível clicar nos botões:
-		$polaroid3/half1_1.set_block_signals(true)
-		$polaroid3/half1_2.set_block_signals(true)
-		$polaroid3_2/half2_1.set_block_signals(true)
-		$polaroid3_2/half2_2.set_block_signals(true)
-		$pause.set_block_signals(true)
-		$wrongAnswer.set_visible(true)
-		$wrongAnswer/opt1/ouvirAgain.set_block_signals(false)
-		$wrongAnswer/opt2/keepPlaying.set_block_signals(false)
-		get_node("/root/Node2D/wrongAnswer/AnimationPlayer").play("openUp", -1, 1.0, false)
-		yield(get_node("/root/Node2D/wrongAnswer/AnimationPlayer"), "animation_finished")
+		_set_options()
 	if(global_config.played_once == 0):
 		$AnimationPlayer.stop()
 		$click.set_visible(false)
@@ -80,16 +90,44 @@ func next():
 
 
 func _set_options():
-	$question.set_text(global_config.stories["Story_" + str(global_config.storychosen)]["Questions"]["Question_" + str(global_config.level+1)]["question_text"])
-	global_config.best_fit_check(40, $question)
-	$polaroid3/polaroid1.set_texture(global_config.stories["Story_" + str(global_config.storychosen)]["Questions"]["Question_" + str(global_config.level+1)]["option_1"]["image"])
-	$labelPolaroid1.set_text(global_config.stories["Story_" + str(global_config.storychosen)]["Questions"]["Question_" + str(global_config.level+1)]["option_1"]["text"])
-	global_config.best_fit_check(30, $labelPolaroid1)
-	$polaroid3_2/polaroid1.set_texture(global_config.stories["Story_" + str(global_config.storychosen)]["Questions"]["Question_" + str(global_config.level+1)]["option_2"]["image"])
-	$labelPolaroid2.set_text(global_config.stories["Story_" + str(global_config.storychosen)]["Questions"]["Question_" + str(global_config.level+1)]["option_2"]["text"])	
-	global_config.best_fit_check(30, $labelPolaroid2)
-	correctAnswer = int(global_config.stories["Story_" + str(global_config.storychosen)]["Questions"]["Question_" + str(global_config.level+1)]["answer"])
-	print(global_config.stories["Story_" + str(global_config.storychosen)]["Questions"]["Question_" + str(global_config.level+1)]["answer"])
+	var questionText
+	var polaroidTexture
+	var labelPolaroid
+	if(global_config.storytelling == false):
+		questionText = global_config.stories["Story_" + str(global_config.storychosen)]["Questions"]["Question_" + str(global_config.level+1)]["question_text"]
+		polaroidTexture = [global_config.stories["Story_" + str(global_config.storychosen)]["Questions"]["Question_" + str(global_config.level+1)]["option_1"]["image"], global_config.stories["Story_" + str(global_config.storychosen)]["Questions"]["Question_" + str(global_config.level+1)]["option_2"]["image"]]
+		labelPolaroid = [global_config.stories["Story_" + str(global_config.storychosen)]["Questions"]["Question_" + str(global_config.level+1)]["option_1"]["text"], global_config.stories["Story_" + str(global_config.storychosen)]["Questions"]["Question_" + str(global_config.level+1)]["option_2"]["text"]]
+		correctAnswer = int(global_config.stories["Story_" + str(global_config.storychosen)]["Questions"]["Question_" + str(global_config.level+1)]["answer"])
+	else:
+		var number
+		if(givenAnswer == 3):
+			number = 1
+		else:
+			if(global_config.stories["Story_" + str(global_config.storychosen)]["Questions"]["Question_" + str(global_config.level)]["option_" + str(givenAnswer)]["goTo"] != "end"):
+				number = global_config.stories["Story_" + str(global_config.storychosen)]["Questions"]["Question_" + str(global_config.level)]["option_" + str(givenAnswer)]["goTo"]
+				number.erase(0,number.find_last("_")+1)
+				number = int(number)
+				global_config.level = number
+			else:
+				number = 0
+				global_config.save_game()
+				global_config.played_once = 1
+				global_config.finish = 1
+				#warning-ignore:return_value_discarded
+				get_tree().change_scene_to(win_scene)
+		if(number!=0):
+			questionText = global_config.stories["Story_" + str(global_config.storychosen)]["Questions"]["Question_" + str(number)]["question_text"]
+			polaroidTexture = [global_config.stories["Story_" + str(global_config.storychosen)]["Questions"]["Question_" + str(number)]["option_1"]["image"], global_config.stories["Story_" + str(global_config.storychosen)]["Questions"]["Question_" + str(number)]["option_2"]["image"]]
+			labelPolaroid = [global_config.stories["Story_" + str(global_config.storychosen)]["Questions"]["Question_" + str(number)]["option_1"]["text"], global_config.stories["Story_" + str(global_config.storychosen)]["Questions"]["Question_" + str(number)]["option_2"]["text"]]
+	if(global_config.finish!=1):
+		$question.set_text(questionText)
+		global_config.best_fit_check(40, $question)
+		$polaroid3/polaroid1.set_texture(polaroidTexture[0])
+		$labelPolaroid1.set_text(labelPolaroid[0])
+		global_config.best_fit_check(30, $labelPolaroid1)
+		$polaroid3_2/polaroid1.set_texture(polaroidTexture[1])
+		$labelPolaroid2.set_text(labelPolaroid[1])
+		global_config.best_fit_check(30, $labelPolaroid2)
 
 
 func _zoomScreenAnimation(var type):

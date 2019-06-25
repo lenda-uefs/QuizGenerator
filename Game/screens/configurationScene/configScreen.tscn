@@ -616,6 +616,7 @@ margin_bottom = 123.0
 color = Color( 0.721569, 0.717647, 0.87451, 1 )
 
 [node name="option1" type="ColorRect" parent="."]
+editor/display_folded = true
 self_modulate = Color( 1, 1, 1, 0 )
 margin_left = -770.735
 margin_top = -35.6429
@@ -642,6 +643,7 @@ text = "Carregar arquivo"
 autowrap = true
 
 [node name="option2" type="ColorRect" parent="."]
+editor/display_folded = true
 self_modulate = Color( 1, 1, 1, 0 )
 margin_left = 716.508
 margin_top = -34.5349

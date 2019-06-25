@@ -57,7 +57,6 @@ func _count_old_configFiles() -> int:
 			while (file_name != ""):
 				if(!dir.current_is_dir()):
 					nFiles = nFiles+1
-					print("Found file: " + file_name)
 				file_name = dir.get_next()
 		else:
 			print("An error occurred when trying to access the path.")
@@ -119,71 +118,69 @@ func _set_game_configuration(dic):
 		_importInsideImages()
 	else:
 		_importImages()
+	yield($AnimationPlayer, "animation_finished")
+	yield(get_tree().create_timer(0.6), "timeout")
+	if(global_config.stories["Story_1"]["Questions"]["Question_1"]["option_1"]["goTo"].empty()):
+		global_config.storytelling = false
+	else:
+		global_config.storytelling = true
+	get_tree().call_group("managers", "loading_process_ended")
+	#warning-ignore:return_value_discarded
+	get_tree().change_scene_to(next_screen)
 
 
 func _importInsideImages():
 	for h in range(1, global_config.stories.size()+1):
 		path = global_config.stories["Story_" + str(h)]["Story_sound_path"]
-		path.erase(0,path.find_last("/")+1)
-		path = "user://" + path
-		global_config.stories["Story_" + str(h)]["Story_sound_path"] = path
+		if(!path.empty()):
+			path.erase(0,path.find_last("/")+1)
+			path = "user://" + path
+			global_config.stories["Story_" + str(h)]["Story_sound_path"] = path
 		for k in range (1, global_config.stories["Story_" + str(h)]["Questions"].size()+1):
 			for j in range (1, 3):
 				path = global_config.stories["Story_" + str(h)]["Questions"]["Question_" + str(k)]["option_" + str(j)]["image"]
 				path.erase(0,path.find_last("/")+1)
 				path = "user://images/" + path
-				print(path)
 				if(!global_config.stories["Story_" + str(h)]["Questions"]["Question_" + str(k)]["option_" + str(j)]["image"].empty()):
 					global_config.stories["Story_" + str(h)]["Questions"]["Question_" + str(k)]["option_" + str(j)]["image"] = _load_process(tex, img, path) 
-					global_config.img = true
+					global_config.img[h-1] = true
 				else:
-					global_config.img = false
-		path = global_config.stories["Story_" + str(h)]["Story_cover"]
-		path.erase(0,path.find_last("/")+1)
-		path = "user://images/" + path
-		global_config.stories["Story_" + str(h)]["Story_cover"] = _load_process(tex, img, path)
-	var next_screen = load("res://screens/titleScreen/titleScreen.tscn")
+					global_config.img[h-1] = false
+		if(!global_config.stories["Story_" + str(h)]["Story_cover"].empty()):
+			path = global_config.stories["Story_" + str(h)]["Story_cover"]
+			path.erase(0,path.find_last("/")+1)
+			path = "user://images/" + path
+			global_config.stories["Story_" + str(h)]["Story_cover"] = _load_process(tex, img, path)
 	yield(get_tree().create_timer(2), "timeout")
-	if(nfiles==0):
-		$AnimationPlayer.play("config_done", -1, 1.0, false)
-	else:
-		$AnimationPlayer.play("config_done2", -1, 1.0, false)
-	yield($AnimationPlayer, "animation_finished")
-	yield(get_tree().create_timer(0.6), "timeout")
-	get_tree().call_group("managers", "loading_process_ended")
-	#warning-ignore:return_value_discarded
-	get_tree().change_scene_to(next_screen)
+	$AnimationPlayer.play("config_done2", -1, 1.0, false)
 
 
 func _importImages():
 	for h in range(1, global_config.stories.size()+1):
 		path = global_config.stories["Story_" + str(h)]["Story_sound_path"]
-		path.erase(0,path.find_last("/")+1)
-		path = "user://" + path
-		dir = Directory.new()
-		dir.copy(global_config.stories["Story_" + str(h)]["Story_sound_path"], path)
+		if(!path.empty()):
+			path.erase(0,path.find_last("/")+1)
+			path = "user://" + path
+			dir = Directory.new()
+			dir.copy(global_config.stories["Story_" + str(h)]["Story_sound_path"], path)
 		for k in range (1, global_config.stories["Story_" + str(h)]["Questions"].size()+1):
 			for j in range (1, 3):
 				if(!global_config.stories["Story_" + str(h)]["Questions"]["Question_" + str(k)]["option_" + str(j)]["image"].empty()):
 					global_config.stories["Story_" + str(h)]["Questions"]["Question_" + str(k)]["option_" + str(j)]["image"] = _load_process(tex, img, global_config.stories["Story_" + str(h)]["Questions"]["Question_" + str(k)]["option_" + str(j)]["image"]) 
-					global_config.img = true
+					global_config.img[h-1] = true
+					print("História" + str(h) + "é com imagem")
 				else:
-					global_config.img = false
+					global_config.img[h-1] = false
+					print("História" + str(h) + "é com texto")
 		if(!global_config.stories["Story_" + str(h)]["Story_cover"].empty()):
 			global_config.stories["Story_" + str(h)]["Story_cover"] = _load_process(tex, img, global_config.stories["Story_" + str(h)]["Story_cover"])
 	yield(get_tree().create_timer(2), "timeout")
 	$AnimationPlayer.play("config_done", -1, 1.0, false)
-	yield($AnimationPlayer, "animation_finished")
-	yield(get_tree().create_timer(0.6), "timeout")
-	get_tree().call_group("managers", "loading_process_ended")
-	#warning-ignore:return_value_discarded
-	get_tree().change_scene_to(next_screen)
 
 
 func _load_process(tex, img, loadPath) -> ImageTexture:
 	var extension = loadPath
 	extension.erase(0,extension.find_last("/")+1)
-	print("Extensão:" + extension)
 	if(nfiles == 0):
 		dir = Directory.new()
 		dir.copy(loadPath, "user://images/" + extension)

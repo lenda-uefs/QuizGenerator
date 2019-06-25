@@ -112,7 +112,7 @@ func _on_keepPlaying_pressed():
 	$keepPlaying.set_texture(null)
 	self.stop()
 	get_node("/root/Node2D/Popup1").set_visible(false)
-	if(global_config.img == true):
+	if(global_config.img[global_config.storychosen-1] == true):
 		get_node("/root/Node2D/polaroid3/half1_1").set_block_signals(false)
 		get_node("/root/Node2D/polaroid3/half1_2").set_block_signals(false)
 		get_node("/root/Node2D/polaroid3_2/half2_1").set_block_signals(false)

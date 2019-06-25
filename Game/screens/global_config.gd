@@ -10,7 +10,6 @@ var initiatingGame
 var background_sound = AudioStreamPlayer.new()
 var comeFrom_listenHistory
 var music = true
-var img = false
 
 #warning-ignore:unused_class_variable
 var mode #Caso seja 1, o jogo teve áudio. Caso seja 2, o jogo não teve
@@ -25,6 +24,10 @@ var game_title
 var game_color
 #warning-ignore:unused_class_variable
 var title_screen_background
+#warning-ignore:unused_class_variable
+var storytelling 
+#warning-ignore:unused_class_variable
+var img = {}
 
 
 func _ready():

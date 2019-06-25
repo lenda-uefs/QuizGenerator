@@ -6,6 +6,9 @@ var previous_scene = load("res://screens/titleScreen/titleScreen.tscn")
 var musicOff = preload("res://sprites/images/soundOff.png")
 var musicOn = preload("res://sprites/images/soundOn.png")
 
+var next_scene = preload("res://screens/gameScene/game.tscn")
+var next_scene2 = preload("res://screens/gameScene2/game2.tscn")
+
 
 func _ready():
 	$background.set_frame_color(Color(global_config.game_color["r"], global_config.game_color["g"], global_config.game_color["b"]))
@@ -95,19 +98,31 @@ func _on_history3Button_pressed():
 
 
 func select_screen():
-	if(global_config.stories["Story_" + str(global_config.storychosen)]["Story_sound_path"].empty()):
+	#Tem texto e não tem som
+	if(global_config.stories["Story_" + str(global_config.storychosen)]["Story_sound_path"].empty() && !global_config.stories["Story_"  + str(global_config.storychosen)]["Story_text_description"].empty()):
 		global_config.mode = 2
 		get_node("/root/Node2D/AnimationPlayer").play_backwards("transition", -1)
 		yield(get_node("/root/Node2D/AnimationPlayer"), "animation_finished")
 		#warning-ignore:return_value_discarded
 		get_tree().change_scene_to(readStory)
-	elif(global_config.stories["Story_"  + str(global_config.storychosen)]["Story_text_description"].empty()):
+	#Tem som e não tem texto
+	elif(!global_config.stories["Story_" + str(global_config.storychosen)]["Story_sound_path"].empty() && global_config.stories["Story_"  + str(global_config.storychosen)]["Story_text_description"].empty()):
 		global_config.mode = 1
 		get_node("/root/Node2D/AnimationPlayer").play_backwards("transition", -1)
 		yield(get_node("/root/Node2D/AnimationPlayer"), "animation_finished")
 		#warning-ignore:return_value_discarded
 		get_tree().change_scene_to(listenStory)
-	else:
+	#Tem texto e som
+	elif(!global_config.stories["Story_" + str(global_config.storychosen)]["Story_sound_path"].empty() && !global_config.stories["Story_"  + str(global_config.storychosen)]["Story_text_description"].empty()):
 		$AnimationPlayer.play("question2", -1, 1.0, false)
 		$option2/history2Button.set_block_signals(false)
 		yield($AnimationPlayer, "animation_finished")
+	#Não tem texto nem som
+	else:
+		global_config.mode = 3
+		if(global_config.img[global_config.storychosen-1] == false):
+			#warning-ignore:return_value_discarded
+			get_tree().change_scene_to(next_scene2)
+		else:
+			#warning-ignore:return_value_discarded
+			get_tree().change_scene_to(next_scene)
