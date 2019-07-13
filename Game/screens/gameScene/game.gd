@@ -117,17 +117,26 @@ func _set_options():
 				get_tree().change_scene_to(win_scene)
 		if(number!=0):
 			questionText = global_config.stories["Story_" + str(global_config.storychosen)]["Questions"]["Question_" + str(number)]["question_text"]
-			polaroidTexture = [global_config.stories["Story_" + str(global_config.storychosen)]["Questions"]["Question_" + str(number)]["option_1"]["image"], global_config.stories["Story_" + str(global_config.storychosen)]["Questions"]["Question_" + str(number)]["option_2"]["image"]]
-			labelPolaroid = [global_config.stories["Story_" + str(global_config.storychosen)]["Questions"]["Question_" + str(number)]["option_1"]["text"], global_config.stories["Story_" + str(global_config.storychosen)]["Questions"]["Question_" + str(number)]["option_2"]["text"]]
+			if(global_config.stories["Story_" + str(global_config.storychosen)]["Questions"]["Question_" + str(number)].size()):
+				polaroidTexture = [global_config.stories["Story_" + str(global_config.storychosen)]["Questions"]["Question_" + str(number)]["option_1"]["image"], global_config.stories["Story_" + str(global_config.storychosen)]["Questions"]["Question_" + str(number)]["option_2"]["image"]]
+				labelPolaroid = [global_config.stories["Story_" + str(global_config.storychosen)]["Questions"]["Question_" + str(number)]["option_1"]["text"], global_config.stories["Story_" + str(global_config.storychosen)]["Questions"]["Question_" + str(number)]["option_2"]["text"]]
+			else:
+				polaroidTexture = [global_config.stories["Story_" + str(global_config.storychosen)]["Questions"]["Question_" + str(number)]["option_1"]["image"], ""]
+				labelPolaroid = [global_config.stories["Story_" + str(global_config.storychosen)]["Questions"]["Question_" + str(number)]["option_1"]["text"], ""]
 	if(global_config.finish!=1):
 		$question.set_text(questionText)
 		global_config.best_fit_check(40, $question)
 		$polaroid3/polaroid1.set_texture(polaroidTexture[0])
 		$labelPolaroid1.set_text(labelPolaroid[0])
 		global_config.best_fit_check(30, $labelPolaroid1)
-		$polaroid3_2/polaroid1.set_texture(polaroidTexture[1])
-		$labelPolaroid2.set_text(labelPolaroid[1])
-		global_config.best_fit_check(30, $labelPolaroid2)
+		if(!labelPolaroid[1].empty()):
+			$polaroid3_2/polaroid1.set_texture(polaroidTexture[1])
+			$labelPolaroid2.set_text(labelPolaroid[1])
+			global_config.best_fit_check(30, $labelPolaroid2)
+			if($labelPolaroid1.get("custom_fonts/font/size") < $labelPolaroid2.get("custom_fonts/font/size")):
+				$labelPolaroid2.get("custom_fonts/font").set("size", $labelPolaroid1.get("custom_fonts/font/size"))
+			else:
+				$labelPolaroid1.get("custom_fonts/font").set("size", $labelPolaroid2.get("custom_fonts/font/size"))
 
 
 func _zoomScreenAnimation(var type):

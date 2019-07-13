@@ -137,12 +137,22 @@ func _importInsideImages():
 			path = "user://" + path
 			global_config.stories["Story_" + str(h)]["Story_sound_path"] = path
 		for k in range (1, global_config.stories["Story_" + str(h)]["Questions"].size()+1):
-			for j in range (1, 3):
-				path = global_config.stories["Story_" + str(h)]["Questions"]["Question_" + str(k)]["option_" + str(j)]["image"]
+			if(global_config.stories["Story_" + str(h)]["Questions"]["Question_" + str(k)].size() == 4):
+				for j in range (1, 3):
+					path = global_config.stories["Story_" + str(h)]["Questions"]["Question_" + str(k)]["option_" + str(j)]["image"]
+					path.erase(0,path.find_last("/")+1)
+					path = "user://images/" + path
+					if(!global_config.stories["Story_" + str(h)]["Questions"]["Question_" + str(k)]["option_" + str(j)]["image"].empty()):
+						global_config.stories["Story_" + str(h)]["Questions"]["Question_" + str(k)]["option_" + str(j)]["image"] = _load_process(tex, img, path) 
+						global_config.img[h-1] = true
+					else:
+						global_config.img[h-1] = false
+			else:
+				path = global_config.stories["Story_" + str(h)]["Questions"]["Question_" + str(k)]["option_1"]["image"]
 				path.erase(0,path.find_last("/")+1)
 				path = "user://images/" + path
-				if(!global_config.stories["Story_" + str(h)]["Questions"]["Question_" + str(k)]["option_" + str(j)]["image"].empty()):
-					global_config.stories["Story_" + str(h)]["Questions"]["Question_" + str(k)]["option_" + str(j)]["image"] = _load_process(tex, img, path) 
+				if(!global_config.stories["Story_" + str(h)]["Questions"]["Question_" + str(k)]["option_1"]["image"].empty()):
+					global_config.stories["Story_" + str(h)]["Questions"]["Question_" + str(k)]["option_1"]["image"] = _load_process(tex, img, path) 
 					global_config.img[h-1] = true
 				else:
 					global_config.img[h-1] = false
@@ -164,14 +174,24 @@ func _importImages():
 			dir = Directory.new()
 			dir.copy(global_config.stories["Story_" + str(h)]["Story_sound_path"], path)
 		for k in range (1, global_config.stories["Story_" + str(h)]["Questions"].size()+1):
-			for j in range (1, 3):
-				if(!global_config.stories["Story_" + str(h)]["Questions"]["Question_" + str(k)]["option_" + str(j)]["image"].empty()):
-					global_config.stories["Story_" + str(h)]["Questions"]["Question_" + str(k)]["option_" + str(j)]["image"] = _load_process(tex, img, global_config.stories["Story_" + str(h)]["Questions"]["Question_" + str(k)]["option_" + str(j)]["image"]) 
-					global_config.img[h-1] = true
-					print("História" + str(h) + "é com imagem")
+			print(global_config.stories["Story_" + str(h)]["Questions"]["Question_" + str(k)].size())
+			if(global_config.stories["Story_" + str(h)]["Questions"]["Question_" + str(k)].size() == 4):
+				for j in range (1, 3):
+					if(!global_config.stories["Story_" + str(h)]["Questions"]["Question_" + str(k)]["option_" + str(j)]["image"].empty()):
+						global_config.stories["Story_" + str(h)]["Questions"]["Question_" + str(k)]["option_" + str(j)]["image"] = _load_process(tex, img, global_config.stories["Story_" + str(h)]["Questions"]["Question_" + str(k)]["option_" + str(j)]["image"]) 
+						global_config.img[h-1] = true
+						print("História" + str(h) + "é com imagem")
+					else:
+						global_config.img[h-1] = false
+						print("História" + str(h) + "é com texto")
+			else:
+				if(!global_config.stories["Story_" + str(h)]["Questions"]["Question_" + str(k)]["option_1"]["image"].empty()):
+						global_config.stories["Story_" + str(h)]["Questions"]["Question_" + str(k)]["option_1"]["image"] = _load_process(tex, img, global_config.stories["Story_" + str(h)]["Questions"]["Question_" + str(k)]["option_1"]["image"]) 
+						global_config.img[h-1] = true
+						#print("História" + str(h) + "é com imagem")
 				else:
 					global_config.img[h-1] = false
-					print("História" + str(h) + "é com texto")
+					#print("História" + str(h) + "é com texto")
 		if(!global_config.stories["Story_" + str(h)]["Story_cover"].empty()):
 			global_config.stories["Story_" + str(h)]["Story_cover"] = _load_process(tex, img, global_config.stories["Story_" + str(h)]["Story_cover"])
 	yield(get_tree().create_timer(2), "timeout")

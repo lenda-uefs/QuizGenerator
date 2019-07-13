@@ -2,6 +2,7 @@ extends Node2D
 
 var correctAnswer
 var givenAnswer = 3
+var questionNumber = 1
 var win_scene = preload("res://screens/winScene/winScreen.tscn")
 
 
@@ -102,14 +103,23 @@ func _set_options():
 				get_tree().change_scene_to(win_scene)
 		if(number!=0):
 			questionText = global_config.stories["Story_" + str(global_config.storychosen)]["Questions"]["Question_" + str(number)]["question_text"]
-			alternativaTexts = ["a) " + global_config.stories["Story_" + str(global_config.storychosen)]["Questions"]["Question_" + str(number)]["option_1"]["text"], "b) " + global_config.stories["Story_" + str(global_config.storychosen)]["Questions"]["Question_" + str(number)]["option_2"]["text"]]
+			if(global_config.stories["Story_" + str(global_config.storychosen)]["Questions"]["Question_" + str(number)].size() == 4):
+				alternativaTexts = ["a) " + global_config.stories["Story_" + str(global_config.storychosen)]["Questions"]["Question_" + str(number)]["option_1"]["text"], "b) " + global_config.stories["Story_" + str(global_config.storychosen)]["Questions"]["Question_" + str(number)]["option_2"]["text"]]
+			else:
+				alternativaTexts = ["a) " + global_config.stories["Story_" + str(global_config.storychosen)]["Questions"]["Question_" + str(number)]["option_1"]["text"], ""]
 	if(global_config.finish != 1):
-		$question.set_text(questionText)
+		$question.set_text(str(questionNumber) + questionText)
 		global_config.best_fit_check(50, $question)
 		$alternativa1.set_text(alternativaTexts[0])
-		global_config.best_fit_check(45, $alternativa1)
-		$alternativa2.set_text(alternativaTexts[1])
-		global_config.best_fit_check(45, $alternativa2)
+		global_config.best_fit_check($question.get("custom_fonts/font/size"), $alternativa1)
+		if(!alternativaTexts[1].empty()):
+			$alternativa2.set_text(alternativaTexts[1])
+			global_config.best_fit_check($question.get("custom_fonts/font/size"), $alternativa2)
+			$alternativa2Button.set_block_signals(false)
+		else:
+			$alternativa2Button.set_block_signals(true)
+			$alternativa2.set_text("")
+		questionNumber = questionNumber + 1
 
 
 func _on_pause_pressed():

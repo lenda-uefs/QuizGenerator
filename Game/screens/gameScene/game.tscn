@@ -21,7 +21,6 @@
 
 [sub_resource type="DynamicFont" id=1]
 size = 40
-outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 2 )
 
@@ -173,7 +172,7 @@ color = Color( 0.611765, 0.862745, 0.972549, 0.905882 )
 margin_left = -292.0
 margin_top = -466.0
 margin_right = 626.0
-margin_bottom = -421.0
+margin_bottom = -402.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Questão 1"
@@ -239,12 +238,12 @@ margin_right = 93.0
 margin_bottom = 3.0
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "oieoieoie"
+text = "Opção 1"
+align = 3
 autowrap = true
 clip_text = true
 
 [node name="polaroid3_2" type="TouchScreenButton" parent="."]
-editor/display_folded = true
 position = Vector2( 324.144, -400.987 )
 rotation = 0.174533
 scale = Vector2( 0.295659, 0.295659 )
@@ -294,13 +293,13 @@ normal = ExtResource( 5 )
 passby_press = true
 
 [node name="labelPolaroid2" type="Label" parent="."]
-margin_left = 287.853
-margin_top = -54.0
-margin_right = 599.853
-margin_bottom = 3.0
+margin_left = 288.0
+margin_top = -52.0
+margin_right = 600.0
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "oieoieoie"
+text = "Opção 2"
+align = 3
 autowrap = true
 clip_text = true
 

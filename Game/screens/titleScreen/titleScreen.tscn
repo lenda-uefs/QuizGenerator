@@ -154,15 +154,16 @@ margin_bottom = 123.0
 color = Color( 0.662745, 0.882353, 0.964706, 1 )
 
 [node name="backgroundImage" type="NinePatchRect" parent="."]
-margin_left = -290.396
-margin_top = -403.766
-margin_right = 240.604
-margin_bottom = 55.234
+margin_left = -268.163
+margin_top = -391.945
+margin_right = 237.837
+margin_bottom = 46.0554
 texture = ExtResource( 2 )
+axis_stretch_vertical = 2
 
 [node name="option1" type="Sprite" parent="."]
 editor/display_folded = true
-position = Vector2( 349.064, -224.007 )
+position = Vector2( 349.064, -167.497 )
 scale = Vector2( 0.414043, 0.414043 )
 texture = ExtResource( 3 )
 
@@ -184,7 +185,7 @@ text = "Jogar"
 
 [node name="option2" type="Sprite" parent="."]
 editor/display_folded = true
-position = Vector2( 352.28, -133.037 )
+position = Vector2( 352.28, -76.5272 )
 scale = Vector2( 0.414, 0.414 )
 texture = ExtResource( 3 )
 
@@ -206,7 +207,7 @@ text = "Instruções"
 
 [node name="option3" type="Sprite" parent="."]
 editor/display_folded = true
-position = Vector2( 351.712, -43.1662 )
+position = Vector2( 351.712, 13.3436 )
 scale = Vector2( 0.414, 0.414 )
 texture = ExtResource( 3 )
 
@@ -272,10 +273,10 @@ scale = Vector2( 0.308931, 0.308931 )
 normal = ExtResource( 9 )
 
 [node name="gameTitle" type="Label" parent="."]
-margin_left = 250.108
-margin_top = -413.701
-margin_right = 701.108
-margin_bottom = -302.701
+margin_left = 250.0
+margin_top = -414.0
+margin_right = 701.0
+margin_bottom = -206.0
 custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
@@ -286,12 +287,14 @@ autowrap = true
 clip_text = true
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+visible = false
 self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( -312.894, 74.8921 )
 scale = Vector2( 0.168, 0.089343 )
 normal = ExtResource( 4 )
 
 [node name="Label" type="Label" parent="."]
+visible = false
 margin_left = -303.119
 margin_top = 69.9811
 margin_right = -135.119
