@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://screens/configurationScene/json_manager.gd" type="Script" id=1]
 [ext_resource path="res://sprites/images/whiteBackground.png" type="Texture" id=2]
@@ -567,6 +567,14 @@ size = 50
 outline_size = 1
 font_data = ExtResource( 3 )
 
+[sub_resource type="DynamicFontData" id=9]
+font_path = "res://212 Queenie Sans.ttf"
+
+[sub_resource type="DynamicFont" id=10]
+size = 54
+outline_color = Color( 0, 0, 0, 1 )
+font_data = SubResource( 9 )
+
 [node name="Node2D" type="Node2D"]
 position = Vector2( 309.423, 476.442 )
 script = ExtResource( 1 )
@@ -580,21 +588,18 @@ margin_bottom = 123.0
 color = Color( 0.721569, 0.717647, 0.87451, 1 )
 
 [node name="option1" type="ColorRect" parent="."]
-self_modulate = Color( 1, 1, 1, 0 )
-margin_left = -770.735
-margin_top = -35.6429
-margin_right = -463.735
-margin_bottom = 27.3571
+margin_left = -200.0
+margin_top = -36.0
+margin_right = 107.0
+margin_bottom = 27.0
 color = Color( 1, 1, 1, 0.478431 )
 
 [node name="carregarArquivo" type="TouchScreenButton" parent="option1"]
-self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 1.09103, 0.046875 )
 scale = Vector2( 0.298239, 0.155961 )
 normal = ExtResource( 2 )
 
 [node name="label" type="Label" parent="option1"]
-self_modulate = Color( 1, 1, 1, 0 )
 margin_left = 29.1805
 margin_top = 7.37239
 margin_right = 291.181
@@ -606,25 +611,23 @@ text = "Carregar arquivo"
 autowrap = true
 
 [node name="option2" type="ColorRect" parent="."]
-self_modulate = Color( 1, 1, 1, 0 )
-margin_left = 716.508
-margin_top = -34.5349
-margin_right = 1005.51
-margin_bottom = 27.4651
+editor/display_folded = true
+margin_left = 295.0
+margin_top = -35.0
+margin_right = 584.002
+margin_bottom = 27.0
 color = Color( 1, 1, 1, 0.478431 )
 
 [node name="baixarModelo" type="TouchScreenButton" parent="option2"]
-self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 0.903564, 0.553711 )
 scale = Vector2( 0.280857, 0.155961 )
 normal = ExtResource( 2 )
 
 [node name="label" type="Label" parent="option2"]
-self_modulate = Color( 1, 1, 1, 0 )
-margin_left = 141.0
-margin_top = 14.0
-margin_right = 350.0
-margin_bottom = 60.0
+margin_left = 48.0
+margin_top = 11.0
+margin_right = 257.0
+margin_bottom = 57.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
@@ -636,7 +639,7 @@ margin_left = -149.088
 margin_top = -358.854
 margin_right = 542.912
 margin_bottom = 11.1462
-window_title = "Abrir um Arquivo"
+window_title = "Open a File"
 mode = 0
 access = 2
 current_dir = "C:/Users"
@@ -644,7 +647,7 @@ current_file = "Public"
 current_path = "C:/Users/Public"
 
 [node name="label1" type="Label" parent="."]
-self_modulate = Color( 1, 1, 1, 0 )
+visible = false
 margin_left = -81.035
 margin_top = -453.513
 margin_right = 533.965
@@ -658,7 +661,6 @@ autowrap = true
 clip_text = true
 
 [node name="label2" type="Label" parent="."]
-self_modulate = Color( 1, 1, 1, 0 )
 margin_left = -283.0
 margin_top = -351.0
 margin_right = 696.0
@@ -671,7 +673,6 @@ autowrap = true
 clip_text = true
 
 [node name="label3" type="Label" parent="."]
-self_modulate = Color( 1, 1, 1, 0 )
 margin_left = -283.0
 margin_top = -243.0
 margin_right = 696.0
@@ -684,6 +685,7 @@ autowrap = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
 editor/display_folded = true
+self_modulate = Color( 1, 1, 1, 0 )
 margin_left = -310.0
 margin_top = -476.0
 margin_right = 713.0
@@ -726,28 +728,36 @@ margin_bottom = 528.0
 custom_fonts/font = SubResource( 8 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
-text = "Muito bem! Agora, por favor, aguarde enquanto configuramos algumas coisinhas..."
+text = "Vamos lá!"
 align = 1
+valign = 1
 autowrap = true
 
 [node name="engre1" type="Sprite" parent="Popup"]
+self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 443.811, 326.726 )
+rotation = 6.28319
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 6 )
 
 [node name="engre3" type="Sprite" parent="Popup"]
+self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 598.24, 359.99 )
+rotation = 6.28319
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 6 )
 
 [node name="engre4" type="Sprite" parent="Popup"]
+self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 560.837, 250.781 )
+rotation = 6.28319
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 6 )
 
 [node name="engre2" type="Sprite" parent="Popup"]
+self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 525.309, 323.094 )
-rotation = -0.261799
+rotation = -6.54498
 scale = Vector2( 0.14, 0.14 )
 texture = ExtResource( 6 )
 
@@ -773,31 +783,46 @@ margin_bottom = 528.0
 custom_fonts/font = SubResource( 8 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
-text = "Aguarde! Estamos carregando o jogo..."
+text = "Vamos lá!"
 align = 1
+valign = 1
 autowrap = true
 
 [node name="engre1" type="Sprite" parent="Popup2"]
+self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 443.811, 326.726 )
+rotation = 6.28319
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 6 )
 
 [node name="engre3" type="Sprite" parent="Popup2"]
+self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 598.24, 359.99 )
+rotation = 6.28319
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 6 )
 
 [node name="engre4" type="Sprite" parent="Popup2"]
+self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 560.837, 250.781 )
+rotation = 6.28319
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 6 )
 
 [node name="engre2" type="Sprite" parent="Popup2"]
+self_modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 525.309, 323.094 )
-rotation = -0.261799
+rotation = -6.54498
 scale = Vector2( 0.14, 0.14 )
 texture = ExtResource( 6 )
 
+[node name="Label" type="Label" parent="."]
+margin_left = -148.0
+margin_top = -458.0
+margin_right = 580.0
+margin_bottom = -403.0
+custom_fonts/font = SubResource( 10 )
+text = "Olá, bem-vindo ao Graphic Quiz Generator!"
 [connection signal="pressed" from="option1/carregarArquivo" to="." method="_on_carregarArquivo_pressed"]
 [connection signal="pressed" from="option2/baixarModelo" to="." method="_on_baixarModelo_pressed"]
 [connection signal="confirmed" from="FileDialog" to="." method="_on_FileDialog_confirmed"]
